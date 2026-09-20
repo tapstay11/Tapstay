@@ -8,7 +8,47 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260920_3">
+  <style>
+    .qr-code-wrapper {
+      width: 174px !important;
+      height: 174px !important;
+      min-width: 174px !important;
+      min-height: 174px !important;
+      max-width: 174px !important;
+      max-height: 174px !important;
+      overflow: hidden !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    .qr-code-box {
+      width: 150px !important;
+      height: 150px !important;
+      max-width: 150px !important;
+      max-height: 150px !important;
+      overflow: hidden !important;
+      position: relative !important;
+      margin: 0 auto !important;
+    }
+    .qr-code-box canvas {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      height: 0 !important;
+      width: 0 !important;
+      position: absolute !important;
+    }
+    .qr-code-box img {
+      display: block !important;
+      width: 150px !important;
+      height: 150px !important;
+      max-width: 150px !important;
+      max-height: 150px !important;
+      margin: 0 auto !important;
+      border-radius: 6px !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -1170,6 +1210,17 @@
         new QRCode(document.getElementById('qrDining'), { ...qrConfig, text: diningUrl });
         new QRCode(document.getElementById('qrWhatsapp'), { ...qrConfig, text: whatsappUrl });
         new QRCode(document.getElementById('qrReview'), { ...qrConfig, text: reviewUrl });
+
+        // Remove canvas elements cleanly so only the single <img> element exists
+        setTimeout(() => {
+          ['qrConcierge', 'qrDining', 'qrWhatsapp', 'qrReview'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+              const canvases = el.querySelectorAll('canvas');
+              canvases.forEach(c => c.remove());
+            }
+          });
+        }, 50);
       } catch (err) {
         console.error('Error generating QR codes:', err);
       }
@@ -1211,6 +1262,6 @@
       setTimeout(initOccupancy, 50);
     }
   </script>
-  <script src="qrcode.min.js" onload="renderQRCodes()"></script>
+  <script src="qrcode.min.js?v=20260920_3" onload="renderQRCodes()"></script>
 </body>
 </html>

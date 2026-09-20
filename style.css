@@ -1068,13 +1068,47 @@ input:focus, select:focus, textarea:focus {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 174px;
+  height: 174px;
   min-width: 174px;
   min-height: 174px;
+  max-width: 174px;
+  max-height: 174px;
+  overflow: hidden;
+  box-sizing: border-box;
 }
-.qr-code-box canvas, .qr-code-box img {
-  display: block !important;
+.qr-code-box {
+  width: 150px;
+  height: 150px;
+  min-width: 150px;
+  min-height: 150px;
+  max-width: 150px;
+  max-height: 150px;
+  overflow: hidden;
+  position: relative;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.qr-code-box canvas {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  pointer-events: none !important;
+}
+.qr-code-box img {
+  display: block !important;
+  margin: 0 auto !important;
   border-radius: 6px;
+  width: 150px !important;
+  height: 150px !important;
+  max-width: 150px !important;
+  max-height: 150px !important;
+  object-fit: contain !important;
 }
 .qr-scan-hint {
   font-size: 0.76rem;
