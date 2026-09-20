@@ -42,9 +42,7 @@
   <header class="site-header" id="siteHeader">
     <div class="container nav-container">
       <a href="#hero" class="brand-logo">
-        <div class="brand-icon">T</div>
-        <div class="brand-text">Tapstay<span>.</span></div>
-        <span class="brand-tag">OS</span>
+        <div class="brand-text">Tapstay</div>
       </a>
 
       <!-- Desktop & Mobile Nav Menu -->
@@ -141,9 +139,9 @@
                 <div class="metric-sub">▲ +14% vs last week</div>
               </div>
               <div class="metric-box">
-                <div class="metric-label">Today's Revenue</div>
-                <div class="metric-value">₹1,84,500</div>
-                <div class="metric-sub">▲ 22 Active Bookings</div>
+                <div class="metric-label">Active Bookings</div>
+                <div class="metric-value">22 Rooms</div>
+                <div class="metric-sub">▲ 100% On-Time Check-In</div>
               </div>
               <div class="metric-box">
                 <div class="metric-label">Kitchen Orders</div>
@@ -221,11 +219,7 @@
 
   <!-- ===== STATS / ROI TICKER ===== -->
   <section class="container">
-    <div class="stats-banner">
-      <div>
-        <div class="stat-item-val">+38%</div>
-        <div class="stat-item-label">Direct Commission-Free Bookings</div>
-      </div>
+    <div class="stats-banner" style="grid-template-columns: repeat(3, 1fr);">
       <div>
         <div class="stat-item-val">3.2x</div>
         <div class="stat-item-label">Faster Dining & Table Turnover</div>
@@ -428,8 +422,8 @@
       <div class="features-grid">
         <div class="feature-box">
           <div class="feature-icon-wrap">💎</div>
-          <h3 class="feature-title">0% Commission Bookings</h3>
-          <p class="feature-text">Stop losing 18%–25% to OTAs. Capture reservations directly on your branded portal with instant confirmations and guest profiles.</p>
+          <h3 class="feature-title">Direct Booking Engine</h3>
+          <p class="feature-text">Capture guest reservations directly on your branded portal with instant confirmations, guest profiles, and dynamic room availability.</p>
         </div>
 
         <div class="feature-box">
@@ -494,7 +488,7 @@
 
           <div class="form-group">
             <label class="form-label" for="inqPhone">Phone / WhatsApp Number</label>
-            <input type="tel" id="inqPhone" class="form-input" placeholder="+91 91423 49249" required>
+            <input type="tel" id="inqPhone" class="form-input" placeholder="Your Phone or WhatsApp number" required>
           </div>
 
           <div class="form-group">
@@ -513,16 +507,16 @@
         </form>
 
         <!-- Direct Contact Strip -->
-        <div style="margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 14px; font-size: 0.86rem;">
-          <a href="tel:+919142349249" style="color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 6px;">
-            <span>📞</span> <span>+91 91423 49249</span>
-          </a>
-          <a href="tel:+916394057120" style="color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 6px;">
-            <span>📞</span> <span>+91 63940 57120</span>
-          </a>
+        <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px; font-size: 0.88rem;">
           <a href="mailto:tapstay11@gmail.com" style="color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 6px;">
             <span>✉️</span> <span>tapstay11@gmail.com</span>
           </a>
+          <span style="color: rgba(255,255,255,0.2);">•</span>
+          <a href="https://www.tapstay.in" target="_blank" style="color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 6px;">
+            <span>🌐</span> <span>www.tapstay.in</span>
+          </a>
+          <span style="color: rgba(255,255,255,0.2);">•</span>
+          <span style="color: var(--text-muted);">Dehradun, Uttarakhand</span>
         </div>
       </div>
     </div>
@@ -534,8 +528,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <div class="brand-logo" style="margin-bottom:6px;">
-            <div class="brand-icon">T</div>
-            <div class="brand-text">Tapstay<span>.</span></div>
+            <div class="brand-text">Tapstay</div>
           </div>
           <p>Next-generation smart hospitality & property management operating system for hotels, resorts, and dining venues.</p>
         </div>
@@ -554,7 +547,7 @@
         <div>
           <div class="footer-col-title">Solutions</div>
           <ul class="footer-links">
-            <li><a href="#features">0% Commission Bookings</a></li>
+            <li><a href="#features">Direct Booking Engine</a></li>
             <li><a href="#features">Contactless F&B Orders</a></li>
             <li><a href="#features">Cloud Front Desk PMS</a></li>
             <li><a href="#features">Kitchen Display System</a></li>
@@ -565,8 +558,6 @@
         <div>
           <div class="footer-col-title">Direct Contact</div>
           <ul class="footer-links">
-            <li><a href="tel:+919142349249">+91 91423 49249</a></li>
-            <li><a href="tel:+916394057120">+91 63940 57120</a></li>
             <li><a href="mailto:tapstay11@gmail.com">tapstay11@gmail.com</a></li>
             <li><a href="https://www.tapstay.in" target="_blank">www.tapstay.in</a></li>
             <li><span style="color:var(--text-muted);font-size:0.82rem;">Dehradun, Uttarakhand</span></li>
@@ -624,11 +615,11 @@
 
       setTimeout(() => {
         btn.innerHTML = '<span>Request Received! ✓</span>';
-        showToast(`Thank you ${name}! Our founding team will contact you at ${phone} shortly.`);
+        showToast(`Thank you ${name}! Our team will get in touch with you shortly.`);
         document.getElementById('inquiryForm').reset();
 
         setTimeout(() => {
-          btn.innerHTML = '<span>Submit Demo Request ✨</span>';
+          btn.innerHTML = '<span>Request Personalized Demo ✨</span>';
           btn.disabled = false;
         }, 3500);
       }, 700);

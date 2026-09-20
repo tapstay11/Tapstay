@@ -348,9 +348,7 @@
   <header class="site-header" style="background:rgba(8,7,13,0.85);">
     <div class="container nav-container">
       <a href="index.html" class="brand-logo">
-        <div class="brand-icon">T</div>
-        <div class="brand-text">Tapstay<span>.</span></div>
-        <span class="brand-tag">OS</span>
+        <div class="brand-text">Tapstay</div>
       </a>
       <div class="nav-actions">
         <a href="index.html" class="btn-ghost">← Back to Homepage</a>
@@ -411,10 +409,10 @@
 
           <div class="receipt-total-bar">
             <div>
-              <div class="receipt-total-label">Total Amount Paid</div>
-              <div style="font-size:0.75rem;color:var(--text-muted);">Includes 18% GST & Platform License</div>
+              <div class="receipt-total-label">Subscription Status</div>
+              <div style="font-size:0.75rem;color:var(--text-muted);">Enterprise Cloud License Active</div>
             </div>
-            <div class="receipt-total-amount" id="totalAmountText">₹3,999.00</div>
+            <div class="receipt-total-amount" id="totalAmountText" style="color:#34D399;font-size:1.05rem;letter-spacing:0.5px;">ACTIVATED ✓</div>
           </div>
         </div>
 
@@ -465,14 +463,11 @@
         <div class="direct-help-banner">
           <div class="help-text">
             <h4>Have immediate questions about setup or hardware?</h4>
-            <p>Speak directly with the Tapstay engineering team in Dehradun.</p>
+            <p>Connect directly with the Tapstay engineering team in Dehradun.</p>
           </div>
           <div class="help-links">
-            <a href="tel:+919142349249" class="btn-help-call">
-              <span>📞 +91 91423 49249</span>
-            </a>
-            <a href="tel:+916394057120" class="btn-help-call" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);">
-              <span>📞 +91 63940 57120</span>
+            <a href="mailto:tapstay11@gmail.com" class="btn-help-call">
+              <span>✉️ Contact Support</span>
             </a>
           </div>
         </div>
@@ -505,7 +500,7 @@
         document.getElementById('planNameText').textContent = plan;
       }
       if (amount) {
-        document.getElementById('totalAmountText').textContent = '₹' + amount;
+        document.getElementById('totalAmountText').textContent = 'ACTIVATED ✓';
       }
       if (order) {
         document.getElementById('orderIdText').textContent = 'Order #' + order;
