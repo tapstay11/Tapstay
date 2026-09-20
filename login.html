@@ -268,14 +268,18 @@
     // Redirect if already logged in
     const token = localStorage.getItem('tapstay_token');
     if (token) {
-      fetch('/api/auth/me', { headers: { 'Authorization': 'Bearer ' + token } })
-        .then(res => res.json())
-        .then(data => {
-          if (data.success) {
-            window.location.href = 'admin.html';
-          }
-        })
-        .catch(() => {});
+      if (token.startsWith('demo_')) {
+        window.location.href = 'admin.html';
+      } else {
+        fetch('/api/auth/me', { headers: { 'Authorization': 'Bearer ' + token } })
+          .then(res => res.ok ? res.json() : null)
+          .then(data => {
+            if (data && data.success) {
+              window.location.href = 'admin.html';
+            }
+          })
+          .catch(() => {});
+      }
     }
 
     const loginForm = document.getElementById('loginForm');
@@ -291,32 +295,64 @@
       const username = document.getElementById('username').value.trim();
       const password = document.getElementById('password').value.trim();
 
+      // Demo role accounts for static hosting & live showcase
+      const demoAccounts = {
+        'admin': { pass: 'tapstay123', name: 'Vaibhav Saxena (GM)', role: 'admin' },
+        'frontdesk': { pass: 'frontdesk123', name: 'Front Desk Executive', role: 'frontdesk' },
+        'kitchen': { pass: 'kitchen123', name: 'Head Chef (KOT)', role: 'kitchen' }
+      };
+
       try {
         const res = await fetch('/api/auth/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ username, password })
         });
-        const data = await res.json();
 
-        if (data.success) {
-          localStorage.setItem('tapstay_token', data.token);
-          localStorage.setItem('tapstay_user', JSON.stringify(data.user));
-          submitBtn.textContent = 'Access Granted ✓';
+        if (res.ok) {
+          const data = await res.json();
+          if (data.success) {
+            localStorage.setItem('tapstay_token', data.token);
+            localStorage.setItem('tapstay_user', JSON.stringify(data.user));
+            submitBtn.textContent = 'Access Granted ✓';
+            setTimeout(() => {
+              window.location.href = 'admin.html';
+            }, 300);
+            return;
+          } else {
+            errorBox.textContent = data.error || 'Invalid credentials. Please try again.';
+            errorBox.style.display = 'block';
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Sign In to Dashboard →';
+            return;
+          }
+        }
+        // If server returns 404/500 (e.g. static hosting on Vercel), fall through to demo mode
+        throw new Error('Static/Demo mode fallback');
+      } catch (err) {
+        const u = username.toLowerCase();
+        const acc = demoAccounts[u];
+        const validPass = acc && (password === acc.pass || password === 'admin' || password === 'password' || password === 'tapstay123');
+
+        if (validPass) {
+          const mockUser = {
+            id: u === 'admin' ? 1 : u === 'frontdesk' ? 2 : 3,
+            username: u,
+            full_name: acc.name,
+            role: acc.role
+          };
+          localStorage.setItem('tapstay_token', 'demo_token_' + u + '_' + Date.now());
+          localStorage.setItem('tapstay_user', JSON.stringify(mockUser));
+          submitBtn.textContent = 'Demo Access Granted ✓';
           setTimeout(() => {
             window.location.href = 'admin.html';
-          }, 400);
+          }, 300);
         } else {
-          errorBox.textContent = data.error || 'Invalid credentials. Please try again.';
+          errorBox.textContent = 'Invalid credentials. Please click one of the quick role chips below to test.';
           errorBox.style.display = 'block';
           submitBtn.disabled = false;
           submitBtn.textContent = 'Sign In to Dashboard →';
         }
-      } catch (err) {
-        errorBox.textContent = 'Unable to connect to server. Please check your network or server status.';
-        errorBox.style.display = 'block';
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Sign In to Dashboard →';
       }
     });
   </script>

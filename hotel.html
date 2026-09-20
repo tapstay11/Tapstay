@@ -461,7 +461,7 @@
           </div>
         </div>
         <div class="qr-target-switcher">
-          <button class="qr-switch-btn active" id="btnTunnel" onclick="switchQrHost('tunnel')">🌐 Public HTTPS (All Phones & Networks)</button>
+          <button class="qr-switch-btn active" id="btnTunnel" onclick="switchQrHost('public')">🌐 Live Cloud (Tapstay.in - All Smartphones)</button>
           <button class="qr-switch-btn" id="btnLanIp" onclick="switchQrHost('lan')">📶 Wi-Fi IP (172.16.71.216)</button>
           <button class="qr-switch-btn" id="btnLocalhost" onclick="switchQrHost('local')">💻 Localhost</button>
         </div>
@@ -1113,14 +1113,14 @@
     }
 
     // ===== SMART QR CODE GENERATION =====
-    const TUNNEL_URL = 'https://a4ee0537aeb823.lhr.life/';
-    let currentQrMode = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? 'tunnel' : 'current';
+    const PRODUCTION_URL = 'https://www.tapstay.in/';
+    let currentQrMode = (window.location.hostname === 'www.tapstay.in' || window.location.hostname === 'tapstay.in') ? 'current' : 'public';
     const LAN_IP = '172.16.71.216';
     const PORT = window.location.port || '8080';
 
     function getBaseUrl() {
-      if (currentQrMode === 'tunnel') {
-        return TUNNEL_URL;
+      if (currentQrMode === 'public') {
+        return PRODUCTION_URL;
       } else if (currentQrMode === 'lan') {
         return 'http://' + LAN_IP + (PORT ? ':' + PORT : '') + '/';
       } else if (currentQrMode === 'local') {
@@ -1177,7 +1177,7 @@
       // Update target hint
       const hint = document.getElementById('qrTargetHint');
       if (hint) {
-        if (currentQrMode === 'tunnel') {
+        if (currentQrMode === 'public' || currentQrMode === 'current') {
           hint.innerHTML = 'Encoding live secure URL: <strong style="color:var(--green-dark);">' + base + '</strong> (Scannable from ANY smartphone & mobile network)';
         } else if (currentQrMode === 'lan') {
           hint.innerHTML = 'Encoding local Wi-Fi URL: <strong style="color:var(--green-dark);">' + base + '</strong> (Phones on same Wi-Fi)';
@@ -1189,10 +1189,10 @@
 
     function switchQrHost(mode) {
       currentQrMode = mode;
-      const btnTunnel = document.getElementById('btnTunnel');
+      const btnPublic = document.getElementById('btnTunnel');
       const btnLan = document.getElementById('btnLanIp');
       const btnLocal = document.getElementById('btnLocalhost');
-      if (btnTunnel) btnTunnel.classList.toggle('active', mode === 'tunnel');
+      if (btnPublic) btnPublic.classList.toggle('active', mode === 'public' || mode === 'current');
       if (btnLan) btnLan.classList.toggle('active', mode === 'lan');
       if (btnLocal) btnLocal.classList.toggle('active', mode === 'local');
       renderQRCodes();
