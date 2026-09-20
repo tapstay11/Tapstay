@@ -364,7 +364,17 @@ class TapStayRequestHandler(http.server.SimpleHTTPRequestHandler):
         path = parsed.path
         query = parse_qs(parsed.query)
 
-        # Redirect root to index.html or handle clean admin route
+        # Redirect clean routes
+        if path in ("/thank-you", "/thank-you/", "/thankyou", "/thankyou/"):
+            self.send_response(302)
+            self.send_header("Location", "/thankyou.html")
+            self.end_headers()
+            return
+        if path == "/hotel" or path == "/hotel/":
+            self.send_response(302)
+            self.send_header("Location", "/hotel.html")
+            self.end_headers()
+            return
         if path == "/admin" or path == "/admin/":
             self.send_response(302)
             self.send_header("Location", "/admin.html")

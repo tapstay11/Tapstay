@@ -3,1208 +3,801 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HOTEL — Heritage Hospitality in Dehradun</title>
-  <meta name="description" content="Experience the finest heritage hospitality at HOTEL, Dehradun. Elegant rooms, exquisite dining, and warm traditional service nestled in the heart of Doon Valley.">
+  
+  <!-- Primary SEO Meta Tags for Google Search -->
+  <title>Tapstay — Empowering Hotels & Restaurants with Smart Technology</title>
+  <meta name="title" content="Tapstay — Empowering Hotels & Restaurants with Smart Technology">
+  <meta name="description" content="Tapstay is the all-in-one hospitality OS & cloud PMS for hotels and restaurants. Streamline direct bookings, contactless QR dining, digital concierge, and front desk operations.">
+  <meta name="keywords" content="Tapstay, hotel PMS, restaurant automation, property management system, QR dining menu, contactless room service, boutique hotel software, smart hospitality OS">
+  <meta name="author" content="Tapstay Founders">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.tapstay.in/">
+  <meta property="og:title" content="Tapstay — Empowering Hotels & Restaurants with Smart Technology">
+  <meta property="og:description" content="All-in-one hospitality OS & PMS for modern hotels & restaurants. Direct bookings, contactless QR ordering, and live operations.">
+  <meta property="og:image" content="https://www.tapstay.in/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Tapstay — Empowering Hotels & Restaurants with Smart Technology">
+  <meta property="twitter:description" content="All-in-one hospitality OS & PMS for modern hotels & restaurants. Direct bookings, contactless QR ordering, and live operations.">
+
+  <!-- Fonts & Stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="landing.css">
 </head>
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header class="header" id="header">
-    <nav class="nav">
-      <a href="#home" class="nav-logo">HOTEL</a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#rooms">Rooms</a></li>
-        <li><a href="#booking">Book Now</a></li>
-        <li><a href="#restaurant">Dining</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#qr-tech">Smart QR</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="login.html" style="background:rgba(201,162,39,0.15);border:1px solid var(--gold);padding:6px 14px;border-radius:50px;color:var(--gold-pale);font-weight:600;text-decoration:none;">🔒 Staff Login</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
+  <!-- Background Ambient Glowing Orbs -->
+  <div class="ambient-glow-mesh" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+  </div>
+
+  <!-- ===== SITE HEADER / NAVBAR ===== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo">
+        <div class="brand-icon">T</div>
+        <div class="brand-text">Tapstay<span>.</span></div>
+        <span class="brand-tag">OS</span>
+      </a>
+
+      <!-- Desktop & Mobile Nav Menu -->
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#solutions" class="nav-link">Solutions</a></li>
+          <li><a href="#demos" class="nav-link">Live Demos</a></li>
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <a href="login.html" class="btn-ghost">Staff Login</a>
+        <a href="hotel.html" class="btn-primary-glow">
+          <span>Explore Hotel Demo</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
   </header>
 
-  <!-- Mobile Navigation -->
-  <div class="mobile-nav" id="mobileNav">
-    <a href="#home" onclick="closeMobileNav()">Home</a>
-    <a href="#rooms" onclick="closeMobileNav()">Rooms</a>
-    <a href="#booking" onclick="closeMobileNav()">Book Now</a>
-    <a href="#restaurant" onclick="closeMobileNav()">Dining</a>
-    <a href="#gallery" onclick="closeMobileNav()">Gallery</a>
-    <a href="#qr-tech" onclick="closeMobileNav()">Smart QR</a>
-    <a href="#reviews" onclick="closeMobileNav()">Reviews</a>
-    <a href="#contact" onclick="closeMobileNav()">Contact</a>
-    <a href="login.html" onclick="closeMobileNav()" style="color:var(--gold);">🔒 Staff Login</a>
-  </div>
-
-  <!-- ===== SECTION 1: HERO / HOME ===== -->
-  <section class="hero" id="home">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-badge">Dehradun's Heritage Retreat</div>
-      <h1>Welcome to <em>HOTEL</em></h1>
-      <p>Where timeless elegance meets warm Doon Valley hospitality. Step into a legacy of comfort, heritage charm, and heartfelt service — right in the heart of Dehradun.</p>
-      <div class="hero-live-status">
-        <span class="live-pulse-dot"></span>
-        <span>Live Status:</span>
-        <span class="status-highlight" id="heroRoomStat">7 Rooms Available</span>
-        <span>•</span>
-        <span class="status-highlight" id="heroTableStat">9 / 14 Tables Occupied (5 Free)</span>
-        <a href="#rooms">Check Rooms →</a>
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      
+      <!-- Tagline Badge -->
+      <div class="hero-badge-wrap">
+        <span class="badge-pulse-dot"></span>
+        <span class="hero-badge-text">Hotel & Restaurant Automation & Solutions</span>
       </div>
-      <div class="hero-btns">
-        <a href="#booking" class="btn-primary" id="heroBookBtn">Book Your Stay ✦</a>
-        <a href="#rooms" class="btn-secondary">Explore Rooms</a>
+
+      <!-- Main Headline -->
+      <h1 class="hero-title">
+        Empowering Hotels & Restaurants with <span class="gradient-text">Smart Technology</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="hero-subtitle">
+        Tapstay unifies your guest experience, contactless dining, and front desk operations into one seamless operating system. Replace clunky legacy software with zero commission bookings, instant QR ordering, and real-time room management.
+      </p>
+
+      <!-- Primary Action Buttons -->
+      <div class="hero-cta-group">
+        <a href="hotel.html" class="btn-hero-primary" id="mainDemoRedirectBtn">
+          <span>Explore Live Hotel Demo</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="login.html" class="btn-hero-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span>Staff PMS Portal</span>
+        </a>
+      </div>
+
+      <!-- Quick Interactive Module Links -->
+      <div class="hero-quick-links">
+        <span class="quick-label">Or jump straight to live modules:</span>
+        <a href="order.html?table=7" class="quick-pill">
+          <span>🍽️ QR Dining (Table 7)</span>
+        </a>
+        <a href="concierge.html?room=204" class="quick-pill">
+          <span>🛎️ In-Room Concierge (Room 204)</span>
+        </a>
+        <a href="review.html" class="quick-pill">
+          <span>⭐ Review Capture</span>
+        </a>
+      </div>
+
+      <!-- Hero Interactive Mockup Showcase -->
+      <div class="hero-mockup-wrapper">
+        <div class="mockup-frame">
+          <div class="mockup-header">
+            <div class="mockup-dots">
+              <span class="mockup-dot red"></span>
+              <span class="mockup-dot yellow"></span>
+              <span class="mockup-dot green"></span>
+            </div>
+            <div class="mockup-address">tapstay.cloud/operations/live-hub</div>
+            <div class="mockup-live-indicator">
+              <span class="badge-pulse-dot" style="background:#10B981;box-shadow:0 0 8px #10B981;"></span>
+              <span>LIVE CLOUD SYSTEM</span>
+            </div>
+          </div>
+
+          <div class="mockup-body">
+            <!-- Metric Stats Grid -->
+            <div class="mockup-metric-grid">
+              <div class="metric-box">
+                <div class="metric-label">Occupancy Rate</div>
+                <div class="metric-value">91.6%</div>
+                <div class="metric-sub">▲ +14% vs last week</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-label">Today's Revenue</div>
+                <div class="metric-value">₹1,84,500</div>
+                <div class="metric-sub">▲ 22 Active Bookings</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-label">Kitchen Orders</div>
+                <div class="metric-value">9 Active</div>
+                <div class="metric-sub">Avg Prep: 11 mins</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-label">Guest Rating</div>
+                <div class="metric-value">4.9 / 5.0</div>
+                <div class="metric-sub">⭐ 148 Verified Reviews</div>
+              </div>
+            </div>
+
+            <!-- Split View: Room Grid + Kitchen Pipeline -->
+            <div class="mockup-split-view">
+              <!-- Mini Room Status Grid -->
+              <div class="split-card">
+                <div class="split-card-title">
+                  <span>24-Room Status Grid (Live Matrix)</span>
+                  <span style="font-size:0.75rem;font-weight:400;color:var(--text-muted);">Auto-sync enabled</span>
+                </div>
+                <div class="mini-room-grid">
+                  <div class="mini-room-pill occ">101 • OCC</div>
+                  <div class="mini-room-pill occ">102 • OCC</div>
+                  <div class="mini-room-pill avail">103 • AVL</div>
+                  <div class="mini-room-pill occ">104 • OCC</div>
+                  <div class="mini-room-pill res">105 • RES</div>
+                  <div class="mini-room-pill clean">106 • CLN</div>
+                  <div class="mini-room-pill occ">201 • OCC</div>
+                  <div class="mini-room-pill avail">202 • AVL</div>
+                  <div class="mini-room-pill occ">203 • OCC</div>
+                  <div class="mini-room-pill occ">204 • OCC</div>
+                  <div class="mini-room-pill res">205 • RES</div>
+                  <div class="mini-room-pill avail">206 • AVL</div>
+                </div>
+              </div>
+
+              <!-- Live Order Pipeline Preview -->
+              <div class="split-card">
+                <div class="split-card-title">
+                  <span>Active Dining Orders (KDS)</span>
+                  <a href="order.html?table=7" style="color:var(--purple-light);text-decoration:none;font-size:0.78rem;font-weight:600;">View Menu →</a>
+                </div>
+                <div class="order-mini-list">
+                  <div class="order-mini-item">
+                    <div>
+                      <strong>Table 7</strong> <span style="color:var(--text-muted);">(Dine-In)</span>
+                      <div style="font-size:0.74rem;color:var(--text-secondary);">2x Paneer Tikka, 1x Dal Makhani</div>
+                    </div>
+                    <span class="order-tag tag-prep">In Prep</span>
+                  </div>
+                  <div class="order-mini-item">
+                    <div>
+                      <strong>Room 204</strong> <span style="color:var(--text-muted);">(In-Room)</span>
+                      <div style="font-size:0.74rem;color:var(--text-secondary);">1x Butter Chicken, 4x Garlic Naan</div>
+                    </div>
+                    <span class="order-tag tag-ready">Ready</span>
+                  </div>
+                  <div class="order-mini-item">
+                    <div>
+                      <strong>Table 3</strong> <span style="color:var(--text-muted);">(Dine-In)</span>
+                      <div style="font-size:0.74rem;color:var(--text-secondary);">2x Fresh Lime Soda, 1x Biryani</div>
+                    </div>
+                    <span class="order-tag tag-new">New</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== STATS / ROI TICKER ===== -->
+  <section class="container">
+    <div class="stats-banner">
+      <div>
+        <div class="stat-item-val">+38%</div>
+        <div class="stat-item-label">Direct Commission-Free Bookings</div>
+      </div>
+      <div>
+        <div class="stat-item-val">3.2x</div>
+        <div class="stat-item-label">Faster Dining & Table Turnover</div>
+      </div>
+      <div>
+        <div class="stat-item-val">Zero</div>
+        <div class="stat-item-label">Hardware Lock-in (Runs in Any Browser)</div>
+      </div>
+      <div>
+        <div class="stat-item-val">100%</div>
+        <div class="stat-item-label">Real-Time Inventory & PMS Synchronization</div>
       </div>
     </div>
   </section>
 
-  <!-- ===== ABOUT ===== -->
-  <section class="about section-padding" id="about">
+  <!-- ===== LIVE DEMO SUITE SECTION ===== -->
+  <section class="section-wrapper" id="demos">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-text reveal">
-          <h2>About HOTEL</h2>
-          <div class="gold-line" style="margin: 16px 0 24px 0;"></div>
-          <p>Nestled among the tree-lined avenues of Dehradun, HOTEL has been a cherished landmark for travellers seeking an authentic blend of heritage grandeur and modern comfort. Our property reflects the timeless spirit of the Doon Valley — gracious, warm, and deeply rooted in tradition.</p>
-          <p>Whether you are visiting for business, a family celebration, or a quiet weekend retreat, every stay at HOTEL is crafted around one simple promise: to make you feel at home, with an elegance you will remember long after you leave.</p>
-        </div>
-        <div class="reveal" style="display:flex;align-items:center;justify-content:center;">
-          <img src="images/gallery-corridor.jpg" alt="HOTEL interior corridor" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md); max-height: 360px; object-fit: cover;">
-        </div>
+      <div class="section-header">
+        <span class="section-tag">Interactive Product Sandbox</span>
+        <h2 class="section-title">Test Every Part of the Tapstay Ecosystem Live</h2>
+        <p class="section-desc">
+          Click any module below to interact with live demo databases, simulated payments, front desk workflows, and guest dining portals.
+        </p>
       </div>
-    </div>
-  </section>
 
-  <!-- ===== AMENITIES ===== -->
-  <section class="amenities section-padding">
-    <div class="container">
-      <h2 class="section-title reveal">Our Highlights</h2>
-      <div class="gold-line reveal"></div>
-      <p class="section-subtitle reveal">Everything you need for a comfortable and memorable stay</p>
-      <div class="amenities-grid">
-        <div class="amenity-card reveal">
-          <div class="amenity-icon">📶</div>
-          <h4>Complimentary Wi-Fi</h4>
-          <p>Stay connected with high-speed internet throughout the property</p>
-        </div>
-        <div class="amenity-card reveal">
-          <div class="amenity-icon">🍽️</div>
-          <h4>In-House Restaurant</h4>
-          <p>Savour authentic local and continental cuisine prepared fresh daily</p>
-        </div>
-        <div class="amenity-card reveal">
-          <div class="amenity-icon">🅿️</div>
-          <h4>Valet Parking</h4>
-          <p>Secure, complimentary parking for all registered guests</p>
-        </div>
-        <div class="amenity-card reveal">
-          <div class="amenity-icon">🛎️</div>
-          <h4>24/7 Room Service</h4>
-          <p>Round-the-clock service to ensure your comfort at any hour</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SECTION 2: ROOMS ===== -->
-  <section class="rooms section-padding" id="rooms">
-    <div class="container">
-      <h2 class="section-title reveal">Our Rooms &amp; Suites</h2>
-      <div class="gold-line reveal"></div>
-      <p class="section-subtitle reveal">Each room is thoughtfully designed to offer heritage charm with every modern comfort</p>
-
-      <!-- Live Room Inventory Bar -->
-      <div class="inventory-bar reveal">
-        <div class="inventory-title-group">
-          <div class="inventory-icon">🏨</div>
+      <div class="demo-cards-grid">
+        
+        <!-- CARD 1: HOTEL DEMO (FEATURED) -->
+        <div class="demo-card featured">
           <div>
-            <h4>Live Room Inventory</h4>
-            <p>Real-time booking status for today in Dehradun</p>
-          </div>
-        </div>
-        <div class="inventory-stats">
-          <div class="stat-pill total">Total Rooms: 24</div>
-          <div class="stat-pill avail" id="pillRoomsAvail">🟢 <span id="availCount">7</span> Available</div>
-          <div class="stat-pill occupied" id="pillRoomsOcc">🔴 <span id="occCount">17</span> Occupied (71%)</div>
-        </div>
-      </div>
-
-      <div class="rooms-grid">
-        <!-- Room 1 -->
-        <div class="room-card reveal">
-          <div class="room-img">
-            <div class="room-stock-tag avail" id="stockRoom1">🟢 <span id="stockCount1">3</span> Available</div>
-            <img src="images/room-heritage-deluxe.jpg" alt="Heritage Deluxe Room" loading="lazy">
-            <div class="room-price-tag">₹4,500 / night</div>
-          </div>
-          <div class="room-info">
-            <h3>Heritage Deluxe Room</h3>
-            <p>A spacious room adorned with traditional Doon Valley decor, featuring handcrafted wooden furniture and plush bedding for a truly restful experience.</p>
-            <ul class="room-features">
-              <li>King Bed</li><li>City View</li><li>32" TV</li><li>Mini Bar</li>
+            <div class="demo-card-icon">🏨</div>
+            <span class="demo-badge primary-demo">Primary Demo Destination</span>
+            <h3 class="demo-card-title">Guest-Facing Hotel Website & Booking Engine</h3>
+            <p class="demo-card-text">
+              The flagship luxury direct booking experience with real-time room availability ticker, dynamic date selection, suite showcases, and instant automated reservation generation.
+            </p>
+            <ul class="demo-features-list">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Heritage luxury aesthetic with dark green and gold design
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Commission-free direct reservations saved directly into PMS
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Dining menu showcase, photo lightbox gallery & verified testimonials
+              </li>
             </ul>
           </div>
-        </div>
-        <!-- Room 2 -->
-        <div class="room-card reveal">
-          <div class="room-img">
-            <div class="room-stock-tag low" id="stockRoom2">🟡 <span id="stockCount2">2</span> Left Today</div>
-            <img src="images/room-garden-view.jpg" alt="Premium Garden View Room" loading="lazy">
-            <div class="room-price-tag">₹5,800 / night</div>
-          </div>
-          <div class="room-info">
-            <h3>Premium Garden View</h3>
-            <p>Wake up to the lush greens of our manicured gardens. This room blends natural light and earthy tones for a refreshing hillside retreat feel.</p>
-            <ul class="room-features">
-              <li>Queen Bed</li><li>Garden View</li><li>Work Desk</li><li>Rain Shower</li>
-            </ul>
-          </div>
-        </div>
-        <!-- Room 3 -->
-        <div class="room-card reveal">
-          <div class="room-img">
-            <div class="room-stock-tag critical" id="stockRoom3">🔴 <span id="stockCount3">1</span> Left (High Demand)</div>
-            <img src="images/room-grand-suite.jpg" alt="Grand Suite" loading="lazy">
-            <div class="room-price-tag">₹9,200 / night</div>
-          </div>
-          <div class="room-info">
-            <h3>Grand Suite</h3>
-            <p>Our signature suite with a private living area, marble bath, and panoramic views. Ideal for guests seeking the pinnacle of heritage luxury and space.</p>
-            <ul class="room-features">
-              <li>King Bed</li><li>Living Area</li><li>Bathtub</li><li>Balcony</li>
-            </ul>
-          </div>
-        </div>
-        <!-- Room 4 -->
-        <div class="room-card reveal">
-          <div class="room-img">
-            <div class="room-stock-tag avail" id="stockRoom4">🟢 <span id="stockCount4">1</span> Available</div>
-            <img src="images/room-executive.jpg" alt="Executive Room" loading="lazy">
-            <div class="room-price-tag">₹6,500 / night</div>
-          </div>
-          <div class="room-info">
-            <h3>Executive Room</h3>
-            <p>Tailored for the modern business traveller — a dedicated workspace, high-speed connectivity, and quiet sophistication in every detail.</p>
-            <ul class="room-features">
-              <li>King Bed</li><li>Work Desk</li><li>Smart TV</li><li>Lounge Access</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SECTION 2b: BOOKING FORM ===== -->
-  <section class="booking section-padding" id="booking">
-    <div class="container">
-      <h2 class="section-title reveal">Book Your Stay</h2>
-      <div class="gold-line reveal"></div>
-      <p class="section-subtitle reveal">Reserve your room in just a few steps — our team will confirm your booking shortly</p>
-
-      <div class="booking-form-card reveal">
-        <!-- The actual form -->
-        <form id="bookingForm" novalidate>
-          <h3>Reservation Details</h3>
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="checkin">Check-in Date <span class="required">*</span></label>
-              <input type="date" id="checkin" name="checkin" required>
-              <span class="error-msg" id="checkinError">Please select a check-in date</span>
-            </div>
-            <div class="form-group">
-              <label for="checkout">Check-out Date <span class="required">*</span></label>
-              <input type="date" id="checkout" name="checkout" required>
-              <span class="error-msg" id="checkoutError">Please select a valid check-out date</span>
-            </div>
-            <div class="form-group">
-              <label for="roomType">Room Type <span class="required">*</span></label>
-              <select id="roomType" name="roomType" required>
-                <option value="">Select a room</option>
-                <option value="Heritage Deluxe Room — ₹4,500/night">Heritage Deluxe Room — ₹4,500/night</option>
-                <option value="Premium Garden View — ₹5,800/night">Premium Garden View — ₹5,800/night</option>
-                <option value="Grand Suite — ₹9,200/night">Grand Suite — ₹9,200/night</option>
-                <option value="Executive Room — ₹6,500/night">Executive Room — ₹6,500/night</option>
-              </select>
-              <span class="error-msg" id="roomTypeError">Please select a room type</span>
-            </div>
-            <div class="form-group">
-              <label for="guests">Number of Guests <span class="required">*</span></label>
-              <select id="guests" name="guests" required>
-                <option value="">Select</option>
-                <option value="1 Guest">1 Guest</option>
-                <option value="2 Guests">2 Guests</option>
-                <option value="3 Guests">3 Guests</option>
-                <option value="4 Guests">4 Guests</option>
-                <option value="5+ Guests">5+ Guests</option>
-              </select>
-              <span class="error-msg" id="guestsError">Please select number of guests</span>
-            </div>
-            <div class="form-group">
-              <label for="guestName">Full Name <span class="required">*</span></label>
-              <input type="text" id="guestName" name="guestName" placeholder="Your full name" required>
-              <span class="error-msg" id="guestNameError">Please enter your name</span>
-            </div>
-            <div class="form-group">
-              <label for="guestPhone">Phone Number <span class="required">*</span></label>
-              <input type="tel" id="guestPhone" name="guestPhone" placeholder="+91 98765 43210" required>
-              <span class="error-msg" id="guestPhoneError">Please enter a valid phone number</span>
-            </div>
-            <div class="form-group full">
-              <label for="guestEmail">Email Address <span class="required">*</span></label>
-              <input type="email" id="guestEmail" name="guestEmail" placeholder="your.email@example.com" required>
-              <span class="error-msg" id="guestEmailError">Please enter a valid email address</span>
-            </div>
-            <div class="form-actions">
-              <button type="submit" class="btn-primary" id="bookNowBtn">Book Now ✦</button>
-            </div>
-          </div>
-        </form>
-
-        <!-- Confirmation (hidden by default) -->
-        <div class="booking-confirmation" id="bookingConfirmation">
-          <div class="confirmation-icon">✓</div>
-          <h3>Booking Request Received!</h3>
-          <p>Thank you for choosing HOTEL. Our reservations team will review your request and confirm your booking within the next few hours.</p>
-          <div class="confirmation-ref" id="confirmationRef">REF: HT-000000</div>
-          <div class="confirmation-details" id="confirmationDetails">
-            <!-- Filled dynamically -->
-          </div>
-          <button class="btn-primary" id="newBookingBtn" onclick="resetBooking()">Make Another Booking</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SECTION 3: RESTAURANT / DINING ===== -->
-  <section class="restaurant section-padding" id="restaurant">
-    <div class="container">
-      <h2 class="section-title reveal">The Grand Kitchen</h2>
-      <div class="gold-line reveal"></div>
-      <p class="section-subtitle reveal">A culinary journey through the flavours of Uttarakhand and beyond</p>
-      <div class="restaurant-grid reveal">
-        <div class="restaurant-intro">
-          <p>The Grand Kitchen is our in-house restaurant where tradition meets taste. Our chefs draw inspiration from the rich culinary heritage of the Garhwal and Kumaon hills, serving dishes that celebrate local ingredients alongside beloved classics from across India and the world.</p>
-          <p>Whether you are starting your morning with a hearty Pahadi breakfast, enjoying a leisurely lunch with family, or savouring a candlelit dinner, every meal at The Grand Kitchen is prepared with care and served with warmth.</p>
-        </div>
-        <div class="restaurant-img">
-          <img src="images/restaurant.jpg" alt="The Grand Kitchen restaurant interior" loading="lazy">
-        </div>
-      </div>
-
-      <!-- Menu Highlights -->
-      <div class="menu-section">
-        <h3 class="reveal">🌟 Signature Dishes</h3>
-        <div class="menu-grid">
-          <div class="menu-item reveal">
-            <h4>Garhwali Dal Tadka</h4>
-            <p>Slow-cooked black lentils tempered with local spices, served with steamed rice and ghee</p>
-            <div class="price">₹320</div>
-          </div>
-          <div class="menu-item reveal">
-            <h4>Tandoori Jhinga Platter</h4>
-            <p>Succulent prawns marinated in yogurt and charcoal-grilled to smoky perfection</p>
-            <div class="price">₹580</div>
-          </div>
-          <div class="menu-item reveal">
-            <h4>Signature Butter Chicken</h4>
-            <p>Our house-special creamy tomato curry with tender chicken, finished with a swirl of cream</p>
-            <div class="price">₹420</div>
-          </div>
-        </div>
-      </div>
-      <div class="menu-section">
-        <h3 class="reveal">🏔️ Local Favourites</h3>
-        <div class="menu-grid">
-          <div class="menu-item reveal">
-            <h4>Kafuli with Mandua Roti</h4>
-            <p>A beloved Garhwali spinach preparation served with traditional finger-millet flatbread</p>
-            <div class="price">₹280</div>
-          </div>
-          <div class="menu-item reveal">
-            <h4>Chainsoo &amp; Bhatt Ki Churkani</h4>
-            <p>A hearty Kumaoni lentil dish with black soybeans, flavoured with local herbs</p>
-            <div class="price">₹260</div>
-          </div>
-          <div class="menu-item reveal">
-            <h4>Bal Mithai</h4>
-            <p>Traditional Kumaoni chocolate fudge coated in sugar balls — the perfect sweet ending</p>
-            <div class="price">₹180</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Live Table Occupancy & Interactive Floor View -->
-      <div class="table-occupancy-section reveal" id="tableOccupancySection">
-        <div class="table-occupancy-header">
           <div>
-            <h3>🍽️ Live Table Occupancy &amp; Seating Status</h3>
-            <p>Real-time seating floor plan for The Grand Kitchen &amp; Courtyard Terrace</p>
-          </div>
-          <div class="table-stats-row">
-            <div class="stat-pill total">Total: 14 Tables</div>
-            <div class="stat-pill occupied" id="pillTablesOcc">🔴 <span id="tablesOccCount">9</span> Occupied</div>
-            <div class="stat-pill avail" id="pillTablesAvail">🟢 <span id="tablesAvailCount">5</span> Available</div>
-            <div class="stat-pill total" style="background:var(--white);">⏱️ Est. Wait: <span id="tablesWaitTime">&lt; 5 mins</span></div>
+            <a href="hotel.html" class="btn-demo-action solid">
+              <span>Launch Live Hotel Website Demo</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
 
-        <!-- Founder Pitch / Staff Live Demo Control -->
-        <div class="pitch-control-panel">
-          <span>⚡ <strong>Pitch Live Demo:</strong> Tap any table below to toggle its status (Occupied ↔ Available) in real time</span>
-          <button class="pitch-mode-btn" onclick="toggleRandomTable()">Simulate Table Turn ↺</button>
+        <!-- CARD 2: PMS ADMIN PORTAL -->
+        <div class="demo-card">
+          <div>
+            <div class="demo-card-icon">🖥️</div>
+            <span class="demo-badge">Operations Hub</span>
+            <h3 class="demo-card-title">Cloud PMS & Front Desk Admin</h3>
+            <p class="demo-card-text">
+              Full 24-room visual matrix across 2 floors with 5 real-time states, walk-in booking creator, check-in/out tracker, and live revenue analytics.
+            </p>
+            <ul class="demo-features-list">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Role-based logins: Admin, Front Desk, Kitchen
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Auto-dirty room triggers on checkout
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Printable QR standee generator studio
+              </li>
+            </ul>
+          </div>
+          <div>
+            <a href="login.html" class="btn-demo-action outline">
+              <span>Access PMS Dashboard →</span>
+            </a>
+          </div>
         </div>
 
-        <!-- 14-Table Floor Grid -->
-        <div class="floor-grid" id="floorGrid">
-          <!-- Rendered dynamically by JavaScript -->
+        <!-- CARD 3: QR DINING & KDS -->
+        <div class="demo-card">
+          <div>
+            <div class="demo-card-icon">🍽️</div>
+            <span class="demo-badge">Contactless F&B</span>
+            <h3 class="demo-card-title">Smart QR Dining & Kitchen Display</h3>
+            <p class="demo-card-text">
+              Guests scan a tabletop QR code on their smartphone to browse the digital menu, customize items, and place direct orders into the 4-stage kitchen pipeline.
+            </p>
+            <ul class="demo-features-list">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Simulated UPI & Card checkout
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Live KDS: New ➔ Preparing ➔ Ready ➔ Delivered
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Special chef notes and tax (GST) breakdowns
+              </li>
+            </ul>
+          </div>
+          <div>
+            <a href="order.html?table=7" class="btn-demo-action outline">
+              <span>Test QR Dining (Table 7) →</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 4: IN-ROOM CONCIERGE -->
+        <div class="demo-card">
+          <div>
+            <div class="demo-card-icon">🛎️</div>
+            <span class="demo-badge">Guest Self-Service</span>
+            <h3 class="demo-card-title">In-Room Digital Concierge</h3>
+            <p class="demo-card-text">
+              Turn any guest's smartphone into a personal butler for housekeeping, fresh towels, laundry, late check-out, and maintenance requests.
+            </p>
+            <ul class="demo-features-list">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Zero app downloads required
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Priority flags for urgent requests
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Real-time front desk resolution status
+              </li>
+            </ul>
+          </div>
+          <div>
+            <a href="concierge.html?room=204" class="btn-demo-action outline">
+              <span>Test Concierge (Room 204) →</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 5: REVIEW ENGINE -->
+        <div class="demo-card">
+          <div>
+            <div class="demo-card-icon">⭐</div>
+            <span class="demo-badge">Reputation Booster</span>
+            <h3 class="demo-card-title">Guest Review & Feedback Capture</h3>
+            <p class="demo-card-text">
+              Gather 5-star touchless guest feedback across cleanliness, food, staff hospitality, and room comfort with automatic website testimonial curation.
+            </p>
+            <ul class="demo-features-list">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Interactive multi-category rating system
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Admin approval toggle to showcase on public site
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Direct sync with sqlite3 database
+              </li>
+            </ul>
+          </div>
+          <div>
+            <a href="review.html" class="btn-demo-action outline">
+              <span>Submit Sample Review →</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CORE CAPABILITIES / FEATURES ===== -->
+  <section class="section-wrapper" id="features" style="background:rgba(10, 8, 16, 0.6);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Built for Hospitality</span>
+        <h2 class="section-title">Everything You Need to Run Your Property</h2>
+        <p class="section-desc">
+          Engineered specifically for boutique hotels, resorts, heritage stays, and high-volume dining outlets.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-icon-wrap">💎</div>
+          <h3 class="feature-title">0% Commission Bookings</h3>
+          <p class="feature-text">Stop losing 18%–25% to OTAs. Capture reservations directly on your branded portal with instant confirmations and guest profiles.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-wrap">⚡</div>
+          <h3 class="feature-title">Real-Time Inventory Sync</h3>
+          <p class="feature-text">Prevent double bookings with instantaneous status synchronization between reception, cleaning staff, and online guests.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-wrap">📱</div>
+          <h3 class="feature-title">Contactless QR Ordering</h3>
+          <p class="feature-text">Empower diners to order directly from their table without waiting for busy servers, boosting upsells and beverage reorders.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-wrap">🧹</div>
+          <h3 class="feature-title">Automated Housekeeping</h3>
+          <p class="feature-text">Rooms automatically switch to 'Needs Cleaning' upon guest checkout, alerting housekeeping immediately for faster room turnover.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-wrap">☁️</div>
+          <h3 class="feature-title">Zero Hardware Lock-In</h3>
+          <p class="feature-text">No specialized terminals or bulky servers required. Tapstay runs natively on iPads, smartphones, laptops, and desktop browsers.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-wrap">🔒</div>
+          <h3 class="feature-title">Enterprise Security</h3>
+          <p class="feature-text">Role-gated sessions, PBKDF2-SHA256 password cryptography, and secure SQLite database backups ensure data reliability.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== SECTION 4: PHOTO GALLERY ===== -->
-  <section class="gallery section-padding" id="gallery">
+  <!-- ===== TRANSPARENT PRICING SECTION ===== -->
+  <section class="section-wrapper" id="pricing">
     <div class="container">
-      <h2 class="section-title reveal">Photo Gallery</h2>
-      <div class="gold-line reveal"></div>
-      <p class="section-subtitle reveal">A glimpse of the HOTEL experience</p>
-      <div class="gallery-grid">
-        <div class="gallery-item reveal" onclick="openLightbox(this)">
-          <img src="images/hero.jpg" alt="HOTEL grand lobby" loading="lazy">
-          <span class="gallery-label">Grand Lobby</span>
+      <div class="section-header">
+        <span class="section-tag">Simple & Transparent</span>
+        <h2 class="section-title">Predictable Pricing Without Hidden Fees</h2>
+        <p class="section-desc">Choose the plan that fits your property scale. Upgrade or cancel anytime.</p>
+      </div>
+
+      <div class="pricing-grid">
+        
+        <!-- STARTER PLAN -->
+        <div class="pricing-card">
+          <div>
+            <h3 class="plan-name">Starter Plan</h3>
+            <p class="plan-desc">For homestays, villas, and boutique properties under 12 rooms.</p>
+            <div class="plan-price">
+              <span class="plan-amount">₹1,999</span>
+              <span class="plan-period">/ month</span>
+            </div>
+            <ul class="plan-features">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Up to 12 Rooms PMS
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Branded Direct Booking Website
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                QR Dining Menu (Up to 10 Tables)
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Digital Concierge Desk
+              </li>
+            </ul>
+          </div>
+          <a href="#contact" class="btn-demo-action outline">Get Started</a>
         </div>
-        <div class="gallery-item reveal" onclick="openLightbox(this)">
-          <img src="images/gallery-exterior.jpg" alt="HOTEL exterior at twilight" loading="lazy">
-          <span class="gallery-label">Hotel Exterior</span>
+
+        <!-- GROWTH PLAN (POPULAR) -->
+        <div class="pricing-card popular">
+          <span class="popular-badge">Most Popular</span>
+          <div>
+            <h3 class="plan-name">Growth Plan</h3>
+            <p class="plan-desc">For mid-size hotels, heritage stays, and boutique resorts.</p>
+            <div class="plan-price">
+              <span class="plan-amount">₹3,999</span>
+              <span class="plan-period">/ month</span>
+            </div>
+            <ul class="plan-features">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                12 to 35 Rooms Visual PMS Grid
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Full Kitchen Display System (KDS)
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Unlimited QR Dining & Room Service
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Automated Review & Reputation Engine
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Priority WhatsApp & Phone Support
+              </li>
+            </ul>
+          </div>
+          <a href="#contact" class="btn-demo-action solid">Choose Growth Plan</a>
         </div>
-        <div class="gallery-item reveal" onclick="openLightbox(this)">
-          <img src="images/room-heritage-deluxe.jpg" alt="Heritage Deluxe Room" loading="lazy">
-          <span class="gallery-label">Heritage Deluxe Room</span>
+
+        <!-- RESORT PLAN -->
+        <div class="pricing-card">
+          <div>
+            <h3 class="plan-name">Resort Plan</h3>
+            <p class="plan-desc">For larger hotels, luxury resorts, and multi-outlet restaurants.</p>
+            <div class="plan-price">
+              <span class="plan-amount">₹6,999</span>
+              <span class="plan-period">/ month</span>
+            </div>
+            <ul class="plan-features">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                35+ Rooms & Multiple Dining Outlets
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Multi-Department Staff Accounts
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Custom Domain & White-label Branding
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Dedicated Account Manager & On-site Setup
+              </li>
+            </ul>
+          </div>
+          <a href="#contact" class="btn-demo-action outline">Contact for Resort</a>
         </div>
-        <div class="gallery-item reveal" onclick="openLightbox(this)">
-          <img src="images/room-grand-suite.jpg" alt="The Grand Suite" loading="lazy">
-          <span class="gallery-label">Grand Suite</span>
-        </div>
-        <div class="gallery-item reveal" onclick="openLightbox(this)">
-          <img src="images/restaurant.jpg" alt="The Grand Kitchen dining hall" loading="lazy">
-          <span class="gallery-label">The Grand Kitchen</span>
-        </div>
-        <div class="gallery-item reveal" onclick="openLightbox(this)">
-          <img src="images/gallery-pool.jpg" alt="Poolside at HOTEL" loading="lazy">
-          <span class="gallery-label">Poolside</span>
-        </div>
-        <div class="gallery-item reveal" onclick="openLightbox(this)">
-          <img src="images/gallery-spa.jpg" alt="Spa & Wellness" loading="lazy">
-          <span class="gallery-label">Spa &amp; Wellness</span>
-        </div>
-        <div class="gallery-item reveal" onclick="openLightbox(this)">
-          <img src="images/gallery-garden.jpg" alt="HOTEL gardens" loading="lazy">
-          <span class="gallery-label">Gardens &amp; Grounds</span>
-        </div>
-        <div class="gallery-item reveal" onclick="openLightbox(this)">
-          <img src="images/gallery-corridor.jpg" alt="Heritage corridor" loading="lazy">
-          <span class="gallery-label">Heritage Corridor</span>
-        </div>
-        <div class="gallery-item reveal" onclick="openLightbox(this)">
-          <img src="images/room-garden-view.jpg" alt="Premium Garden View Room" loading="lazy">
-          <span class="gallery-label">Garden View Room</span>
-        </div>
-        <div class="gallery-item reveal" onclick="openLightbox(this)">
-          <img src="images/gallery-breakfast.jpg" alt="Breakfast buffet spread" loading="lazy">
-          <span class="gallery-label">Breakfast Spread</span>
-        </div>
-        <div class="gallery-item reveal" onclick="openLightbox(this)">
-          <img src="images/room-executive.jpg" alt="Executive Room" loading="lazy">
-          <span class="gallery-label">Executive Room</span>
-        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
-    <img src="" alt="Full view" id="lightboxImg">
-  </div>
-
-  <!-- ===== SECTION 5: SMART QR HOSPITALITY & ROADMAP ===== -->
-  <section class="qr-section section-padding" id="qr-tech">
+  <!-- ===== FOUNDERS & CONTACT SECTION (From User's Brand Card) ===== -->
+  <section class="section-wrapper" id="contact">
     <div class="container">
-      <h2 class="section-title reveal">Smart QR Hospitality</h2>
-      <div class="gold-line reveal"></div>
-      <p class="section-subtitle reveal">Next-generation contactless touchpoints — scan any QR code with your phone camera to test the live demo</p>
-
-      <!-- Network Target / Phone Scanning Assistant -->
-      <div class="qr-target-banner reveal">
-        <div class="qr-target-info">
-          <div class="qr-target-icon">📱</div>
-          <div class="qr-target-text">
-            <h4>Live Scannable QR Code Target</h4>
-            <p id="qrTargetHint">Optimized for real smartphones on local Wi-Fi. Point your camera to scan.</p>
-          </div>
-        </div>
-        <div class="qr-target-switcher">
-          <button class="qr-switch-btn active" id="btnTunnel" onclick="switchQrHost('tunnel')">🌐 Public HTTPS (All Phones & Networks)</button>
-          <button class="qr-switch-btn" id="btnLanIp" onclick="switchQrHost('lan')">📶 Wi-Fi IP (172.16.71.216)</button>
-          <button class="qr-switch-btn" id="btnLocalhost" onclick="switchQrHost('local')">💻 Localhost</button>
-        </div>
+      <div class="section-header">
+        <span class="section-tag">Get in Touch</span>
+        <h2 class="section-title">Ready to Modernize Your Hotel or Restaurant?</h2>
+        <p class="section-desc">
+          Speak directly with the Tapstay founding team for a personalized demo or property onboarding.
+        </p>
       </div>
 
-      <!-- 4 Live Working Demo QR Cards -->
-      <div class="qr-grid">
-        <!-- Card 1: In-Room Concierge -->
-        <div class="qr-card reveal">
-          <div class="qr-card-badges">
-            <span class="qr-badge-touchpoint">Room 204 Demo</span>
-            <span class="qr-badge-live">Live Interactive</span>
-          </div>
-          <div class="qr-code-wrapper">
-            <div id="qrConcierge" class="qr-code-box"></div>
-          </div>
-          <div class="qr-scan-hint">📷 Scan with phone camera</div>
-          <h3>In-Room Digital Concierge</h3>
-          <p>Contactless guest portal placed in rooms. Guests request housekeeping, fresh towels, laundry, late check-out, and access hotel Wi-Fi details instantly without calling reception.</p>
-          <a href="concierge.html?room=204&type=Heritage+Deluxe+Room" target="_blank" class="qr-action-btn" id="btnConciergeLink">Open Concierge Demo (Room 204) ↗</a>
-        </div>
-
-        <!-- Card 2: Table Food Ordering -->
-        <div class="qr-card reveal">
-          <div class="qr-card-badges">
-            <span class="qr-badge-touchpoint">Dining Table 7</span>
-            <span class="qr-badge-live">Live Interactive</span>
-          </div>
-          <div class="qr-code-wrapper">
-            <div id="qrDining" class="qr-code-box"></div>
-          </div>
-          <div class="qr-scan-hint">📷 Scan with phone camera</div>
-          <h3>Contactless Table Ordering</h3>
-          <p>Scan-and-order system for restaurant, courtyard, and room dining. Guests browse illustrated menus, build a live cart, customize orders, and complete mock digital payment.</p>
-          <a href="order.html?table=7" target="_blank" class="qr-action-btn" id="btnDiningLink">Open Food Ordering (Table 7) ↗</a>
-        </div>
-
-        <!-- Card 3: Scan-to-WhatsApp Enquiry -->
-        <div class="qr-card reveal">
-          <div class="qr-card-badges">
-            <span class="qr-badge-touchpoint">Direct WhatsApp</span>
-            <span class="qr-badge-live">Live Interactive</span>
-          </div>
-          <div class="qr-code-wrapper">
-            <div id="qrWhatsapp" class="qr-code-box"></div>
-          </div>
-          <div class="qr-scan-hint">📷 Scan with phone camera</div>
-          <h3>Scan-to-WhatsApp Concierge</h3>
-          <p>One-scan connection directly into WhatsApp with pre-filled booking and concierge queries. Fast, frictionless guest communication without downloading any third-party app.</p>
-          <a href="https://wa.me/919876543210?text=Hello%20HOTEL%20Dehradun%2C%20I%20would%20like%20to%20enquire%20about%20room%20availability%20and%20amenities." target="_blank" class="qr-action-btn" id="btnWhatsappLink">Open WhatsApp Chat ↗</a>
-        </div>
-
-        <!-- Card 4: Review Collection -->
-        <div class="qr-card reveal">
-          <div class="qr-card-badges">
-            <span class="qr-badge-touchpoint">Checkout & Billing</span>
-            <span class="qr-badge-live">Live Interactive</span>
-          </div>
-          <div class="qr-code-wrapper">
-            <div id="qrReview" class="qr-code-box"></div>
-          </div>
-          <div class="qr-scan-hint">📷 Scan with phone camera</div>
-          <h3>Review & Feedback Collection</h3>
-          <p>Touchless feedback QR placed on bill folders and front desk. Guests submit 5-star ratings, category scores (Room, Cleanliness, Food, Staff), and constructive feedback before departure.</p>
-          <a href="review.html?stay=recent" target="_blank" class="qr-action-btn" id="btnReviewLink">Open Review Form ↗</a>
-        </div>
-      </div>
-
-      <!-- Roadmap Section (Text mentions only) -->
-      <div class="roadmap-container reveal">
-        <div class="roadmap-header">
-          <div class="gold-line" style="margin:0 auto 16px auto;"></div>
-          <h3>Technology Roadmap — Coming Soon</h3>
-          <p>Upcoming smart hospitality features in development for HOTEL</p>
-        </div>
-        <div class="roadmap-grid">
-          <div class="roadmap-card">
-            <span class="roadmap-badge">Phase 2 • Coming Soon</span>
-            <h4><span>🔑</span> Keyless Mobile Room Access</h4>
-            <p>Encrypted digital room keys sent directly to Apple Wallet & Google Wallet via Bluetooth Low Energy (BLE) door locks.</p>
-          </div>
-          <div class="roadmap-card">
-            <span class="roadmap-badge">Phase 2 • Coming Soon</span>
-            <h4><span>🌡️</span> Smart Climate & Lighting</h4>
-            <p>In-browser guest room automation to adjust air conditioning, motorized shades, and ambient scene lighting from their bed.</p>
-          </div>
-          <div class="roadmap-card">
-            <span class="roadmap-badge">Phase 3 • Coming Soon</span>
-            <h4><span>🌐</span> AI Multi-Lingual Concierge</h4>
-            <p>24/7 intelligent virtual assistant conversing naturally in Hindi, English, Spanish, French, and regional languages.</p>
-          </div>
-          <div class="roadmap-card">
-            <span class="roadmap-badge">Phase 3 • Coming Soon</span>
-            <h4><span>🚗</span> One-Tap Valet & Airport Cab</h4>
-            <p>Request vehicle retrieval 10 minutes ahead of departure or book pre-negotiated flat rate Dehradun airport taxis.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SECTION 6: REVIEWS / TESTIMONIALS ===== -->
-  <!--
-    NOTE: All testimonials below are ILLUSTRATIVE PLACEHOLDER CONTENT
-    created for demo purposes only. These are not real guest reviews.
-    Names are fictional. Do not attribute these quotes to real individuals.
-  -->
-  <section class="reviews section-padding" id="reviews">
-    <div class="container">
-      <h2 class="section-title reveal">What Our Guests Say</h2>
-      <div class="gold-line reveal"></div>
-      <p class="section-subtitle reveal">Heartfelt words from travellers who have experienced HOTEL</p>
-      <div class="reviews-grid">
-        <div class="review-card reveal">
-          <div class="review-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <blockquote>The heritage charm of this hotel is unmatched. From the moment we walked in, the warm staff and beautifully maintained interiors made us feel like honoured guests. The Garhwali dishes at dinner were an absolute highlight.</blockquote>
-          <div class="review-author">
-            <div class="review-avatar">AS</div>
-            <div class="review-author-info">
-              <h4>A. Sharma</h4>
-              <p>Family trip, March 2024</p>
-            </div>
-          </div>
-        </div>
-        <div class="review-card reveal">
-          <div class="review-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <blockquote>I travel to Dehradun often for work, and HOTEL has become my go-to. The executive room is quiet, the WiFi is reliable, and the 24-hour room service means I never have to worry about late arrivals. Highly recommend.</blockquote>
-          <div class="review-author">
-            <div class="review-avatar">RP</div>
-            <div class="review-author-info">
-              <h4>R. Patel</h4>
-              <p>Business travel, June 2024</p>
-            </div>
-          </div>
-        </div>
-        <div class="review-card reveal">
-          <div class="review-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star" style="opacity:0.3">★</span>
-          </div>
-          <blockquote>We booked the Grand Suite for our anniversary and it was magical. The garden views, the spacious bathtub, the attention to detail — everything felt special. The staff even arranged flowers and a cake for us without being asked!</blockquote>
-          <div class="review-author">
-            <div class="review-avatar">MK</div>
-            <div class="review-author-info">
-              <h4>M. Kapoor</h4>
-              <p>Anniversary getaway, January 2024</p>
-            </div>
-          </div>
-        </div>
-        <div class="review-card reveal">
-          <div class="review-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <blockquote>A hidden gem in Dehradun! The heritage corridors, the courtyard garden, and the warm Pahadi hospitality transported us to a different era. We barely wanted to step outside the hotel. Will definitely return.</blockquote>
-          <div class="review-author">
-            <div class="review-avatar">DN</div>
-            <div class="review-author-info">
-              <h4>D. Nair</h4>
-              <p>Weekend retreat, August 2024</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SECTION 6: LOCATION / CONTACT ===== -->
-  <section class="contact section-padding" id="contact">
-    <div class="container">
-      <h2 class="section-title reveal">Location &amp; Contact</h2>
-      <div class="gold-line reveal"></div>
-      <p class="section-subtitle reveal">We would love to hear from you — reach out or find us on the map</p>
       <div class="contact-grid">
-        <div class="reveal">
-          <div class="contact-info">
-            <div class="contact-info-item">
-              <div class="contact-info-icon">📍</div>
-              <div>
-                <h4>Address</h4>
-                <p>14, Rajpur Road, Near Clock Tower,<br>Dehradun, Uttarakhand 248001</p>
-              </div>
+        
+        <!-- Digital Re-creation of User's Uploaded Business Card -->
+        <div class="business-card-showcase">
+          <div class="card-ambient-purple"></div>
+          <div class="card-ambient-magenta"></div>
+
+          <!-- Top Brand Header -->
+          <div class="card-top-header">
+            <div class="card-brand-title">Tapstay</div>
+            <div class="card-brand-subtitle">Hotel & Restaurant automation & solutions</div>
+          </div>
+
+          <!-- Middle Split Details (matching the photo) -->
+          <div class="card-split-content">
+            <!-- Left Info List -->
+            <div class="contact-info-list">
+              <a href="tel:+919142349249" class="contact-item">
+                <div class="contact-icon-circle">📞</div>
+                <span>+91 91423 49249</span>
+              </a>
+              <a href="tel:+916394057120" class="contact-item">
+                <div class="contact-icon-circle">📞</div>
+                <span>+91 63940 57120</span>
+              </a>
+              <a href="mailto:tapstay11@gmail.com" class="contact-item">
+                <div class="contact-icon-circle">✉️</div>
+                <span>tapstay11@gmail.com</span>
+              </a>
+              <a href="https://www.tapstay.in" target="_blank" class="contact-item">
+                <div class="contact-icon-circle">🌐</div>
+                <span>www.tapstay.in</span>
+              </a>
             </div>
-            <div class="contact-info-item">
-              <div class="contact-info-icon">📞</div>
-              <div>
-                <h4>Phone</h4>
-                <p>+91 135 265 7890<br>+91 98765 43210 (Reservations)</p>
-              </div>
-            </div>
-            <div class="contact-info-item">
-              <div class="contact-info-icon">✉️</div>
-              <div>
-                <h4>Email</h4>
-                <p>reservations@hotel-dehradun.in<br>info@hotel-dehradun.in</p>
-              </div>
-            </div>
-            <div class="contact-info-item">
-              <div class="contact-info-icon">🕐</div>
-              <div>
-                <h4>Check-in / Check-out</h4>
-                <p>Check-in: 2:00 PM &nbsp;|&nbsp; Check-out: 12:00 PM</p>
+
+            <!-- Center Divider -->
+            <div class="card-divider-line"></div>
+
+            <!-- Right Hero Statement -->
+            <div class="card-statement-box">
+              <div class="card-statement-text">
+                Empowering Hotel & Restaurants with Smart Technology
               </div>
             </div>
           </div>
-          <!-- Map embed centered on Dehradun Rajpur Road area -->
-          <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3443.7!2d78.04!3d30.33!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDE5JzQ4LjAiTiA3OMKwMDInMjQuMCJF!5e0!3m2!1sen!2sin!4v1700000000000" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="HOTEL location on map"></iframe>
+
+          <!-- Card Bottom Note -->
+          <div style="margin-top:28px;font-size:0.8rem;color:var(--text-muted);position:relative;z-index:2;">
+            📍 Founded in Dehradun — Hardik, Vaibhav Saxena, Arush, Vaibhav Pandey
           </div>
         </div>
 
-        <div class="contact-form-card reveal">
-          <h3>Send Us a Message</h3>
-          <form class="contact-form-grid" id="contactForm" onsubmit="handleContactSubmit(event)">
+        <!-- Quick Consultation / Demo Inquiry Form -->
+        <div class="inquiry-form-card">
+          <h3 class="inquiry-title">Request a Personalized Demo</h3>
+          <p class="inquiry-subtitle">Fill in your property details and we'll reach out within 2 hours.</p>
+
+          <form id="inquiryForm" onsubmit="handleInquirySubmit(event)">
             <div class="form-group">
-              <label for="contactName">Your Name</label>
-              <input type="text" id="contactName" placeholder="Full name">
+              <label class="form-label" for="inqName">Your Name</label>
+              <input type="text" id="inqName" class="form-input" placeholder="e.g. Vaibhav Saxena" required>
             </div>
+
             <div class="form-group">
-              <label for="contactEmail">Email</label>
-              <input type="email" id="contactEmail" placeholder="your.email@example.com">
+              <label class="form-label" for="inqHotel">Property Name & Location</label>
+              <input type="text" id="inqHotel" class="form-input" placeholder="e.g. Royal Heritage Resort, Dehradun" required>
             </div>
+
             <div class="form-group">
-              <label for="contactMessage">Message</label>
-              <textarea id="contactMessage" placeholder="How can we help you?"></textarea>
+              <label class="form-label" for="inqPhone">Phone Number</label>
+              <input type="tel" id="inqPhone" class="form-input" placeholder="+91 98765 43210" required>
             </div>
-            <button type="submit" class="btn-primary" id="contactSubmitBtn">Send Message</button>
+
+            <div class="form-group">
+              <label class="form-label" for="inqType">Property Scale</label>
+              <select id="inqType" class="form-select">
+                <option value="under12">Boutique / Homestay (Under 12 Rooms)</option>
+                <option value="12to35" selected>Mid-Size Hotel (12–35 Rooms)</option>
+                <option value="resort">Resort & Multiple Outlets (35+ Rooms)</option>
+                <option value="restaurant">Stand-alone Restaurant / Cafe</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-submit-inquiry" id="inquirySubmitBtn">
+              <span>Submit Demo Request ✨</span>
+            </button>
           </form>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
+  <!-- ===== SITE FOOTER ===== -->
+  <footer class="site-footer">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-logo">HOTEL</div>
-          <p>Heritage hospitality in the heart of Dehradun. A tradition of warmth, comfort, and timeless elegance since generations.</p>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo" style="margin-bottom:6px;">
+            <div class="brand-icon">T</div>
+            <div class="brand-text">Tapstay<span>.</span></div>
+          </div>
+          <p>Next-generation smart hospitality & property management operating system for hotels, resorts, and dining venues.</p>
         </div>
+
         <div>
-          <h4>Quick Links</h4>
+          <div class="footer-col-title">Live Demos</div>
           <ul class="footer-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#rooms">Rooms &amp; Suites</a></li>
-            <li><a href="#booking">Book a Room</a></li>
-            <li><a href="#restaurant">Dining</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="hotel.html">Hotel Guest Website</a></li>
+            <li><a href="login.html">PMS Operations Login</a></li>
+            <li><a href="order.html?table=7">Smart QR Dining</a></li>
+            <li><a href="concierge.html?room=204">Digital Concierge</a></li>
+            <li><a href="review.html">Guest Reviews</a></li>
           </ul>
         </div>
+
         <div>
-          <h4>Contact</h4>
-          <p>14, Rajpur Road, Near Clock Tower<br>Dehradun, Uttarakhand 248001</p>
-          <p style="margin-top: 8px;">+91 135 265 7890</p>
-          <p>reservations@hotel-dehradun.in</p>
+          <div class="footer-col-title">Solutions</div>
+          <ul class="footer-links">
+            <li><a href="#features">0% Commission Bookings</a></li>
+            <li><a href="#features">Contactless F&B Orders</a></li>
+            <li><a href="#features">Cloud Front Desk PMS</a></li>
+            <li><a href="#features">Kitchen Display System</a></li>
+            <li><a href="#pricing">Acrylic Standee Studio</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Direct Contact</div>
+          <ul class="footer-links">
+            <li><a href="tel:+919142349249">+91 91423 49249</a></li>
+            <li><a href="tel:+916394057120">+91 63940 57120</a></li>
+            <li><a href="mailto:tapstay11@gmail.com">tapstay11@gmail.com</a></li>
+            <li><a href="https://www.tapstay.in" target="_blank">www.tapstay.in</a></li>
+            <li><span style="color:var(--text-muted);font-size:0.82rem;">Dehradun, Uttarakhand</span></li>
+          </ul>
         </div>
       </div>
+
       <div class="footer-bottom">
-        <p>&copy; 2024 HOTEL, Dehradun. All rights reserved.</p>
+        <div>© 2026 Tapstay Technologies. All rights reserved.</div>
+        <div>Empowering Hotels & Restaurants with Smart Technology.</div>
       </div>
     </div>
   </footer>
 
-  <!-- ===== JAVASCRIPT ===== -->
+  <!-- Toast Notification -->
+  <div class="toast-msg" id="toastMsg"></div>
+
+  <!-- JavaScript for Interactions -->
   <script>
-    // ===== MOBILE NAV =====
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
-
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      mobileNav.classList.toggle('active');
-      document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-    });
-
-    function closeMobileNav() {
-      hamburger.classList.remove('active');
-      mobileNav.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    // ===== HEADER SCROLL =====
-    const header = document.getElementById('header');
+    // Header scroll background effect
     window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 60);
-    });
-
-    // ===== SCROLL REVEAL =====
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-    revealElements.forEach(el => revealObserver.observe(el));
-
-    // ===== SET MIN DATES FOR BOOKING =====
-    const today = new Date();
-    const todayStr = today.toISOString().split('T')[0];
-    const checkinInput = document.getElementById('checkin');
-    const checkoutInput = document.getElementById('checkout');
-    checkinInput.min = todayStr;
-    checkinInput.value = todayStr;
-
-    const tomorrow = new Date(today);
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    const tomorrowStr = tomorrow.toISOString().split('T')[0];
-    checkoutInput.min = tomorrowStr;
-    checkoutInput.value = tomorrowStr;
-
-    checkinInput.addEventListener('change', () => {
-      const ci = new Date(checkinInput.value);
-      const nextDay = new Date(ci);
-      nextDay.setDate(nextDay.getDate() + 1);
-      checkoutInput.min = nextDay.toISOString().split('T')[0];
-      if (new Date(checkoutInput.value) <= ci) {
-        checkoutInput.value = nextDay.toISOString().split('T')[0];
-      }
-    });
-
-    // ===== BOOKING FORM VALIDATION & SUBMIT =====
-    const bookingForm = document.getElementById('bookingForm');
-    const bookingConfirmation = document.getElementById('bookingConfirmation');
-
-    function showError(inputId, errorId) {
-      document.getElementById(inputId).classList.add('error');
-      document.getElementById(errorId).classList.add('visible');
-    }
-
-    function clearErrors() {
-      document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
-      document.querySelectorAll('.error-msg').forEach(el => el.classList.remove('visible'));
-    }
-
-    bookingForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      clearErrors();
-
-      let valid = true;
-      const checkin = checkinInput.value;
-      const checkout = checkoutInput.value;
-      const roomType = document.getElementById('roomType').value;
-      const guests = document.getElementById('guests').value;
-      const name = document.getElementById('guestName').value.trim();
-      const phone = document.getElementById('guestPhone').value.trim();
-      const email = document.getElementById('guestEmail').value.trim();
-
-      if (!checkin) { showError('checkin', 'checkinError'); valid = false; }
-      if (!checkout || new Date(checkout) <= new Date(checkin)) {
-        showError('checkout', 'checkoutError'); valid = false;
-      }
-      if (!roomType) { showError('roomType', 'roomTypeError'); valid = false; }
-      if (!guests) { showError('guests', 'guestsError'); valid = false; }
-      if (!name) { showError('guestName', 'guestNameError'); valid = false; }
-      if (!phone || phone.length < 7) { showError('guestPhone', 'guestPhoneError'); valid = false; }
-      if (!email || !email.includes('@') || !email.includes('.')) {
-        showError('guestEmail', 'guestEmailError'); valid = false;
-      }
-
-      if (!valid) return;
-
-      // Generate a reference number
-      const refNum = 'TS-' + Math.floor(100000 + Math.random() * 900000);
-      document.getElementById('confirmationRef').textContent = 'REF: ' + refNum;
-
-      // Map room type for TapStay API
-      let typeId = 'deluxe';
-      if (roomType.includes('Garden')) typeId = 'garden';
-      else if (roomType.includes('Suite')) typeId = 'suite';
-      else if (roomType.includes('Executive')) typeId = 'executive';
-
-      // Send to TapStay live backend
-      fetch('/api/bookings', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          guest_name: name,
-          guest_phone: phone,
-          guest_email: email,
-          room_type_id: typeId,
-          guests_count: parseInt(guests) || 2,
-          checkin_date: checkin,
-          checkout_date: checkout,
-          source: 'website'
-        })
-      })
-      .then(r => r.json())
-      .then(res => {
-        if (res.success && res.ref_number) {
-          document.getElementById('confirmationRef').textContent = 'REF: ' + res.ref_number + (res.assigned_room ? ' • Room ' + res.assigned_room : '');
-        }
-      })
-      .catch(err => console.log('Booking sync offline/local mode'));
-
-      // Calculate nights
-      const nights = Math.round((new Date(checkout) - new Date(checkin)) / (1000 * 60 * 60 * 24));
-
-      // Format dates nicely
-      const fmtDate = (d) => new Date(d).toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
-
-      // Build confirmation details
-      const detailsEl = document.getElementById('confirmationDetails');
-      detailsEl.innerHTML = `
-        <div class="detail-row"><span class="detail-label">Guest Name</span><span class="detail-value">${name}</span></div>
-        <div class="detail-row"><span class="detail-label">Phone</span><span class="detail-value">${phone}</span></div>
-        <div class="detail-row"><span class="detail-label">Email</span><span class="detail-value">${email}</span></div>
-        <div class="detail-row"><span class="detail-label">Room</span><span class="detail-value">${roomType.split('—')[0].trim()}</span></div>
-        <div class="detail-row"><span class="detail-label">Guests</span><span class="detail-value">${guests}</span></div>
-        <div class="detail-row"><span class="detail-label">Check-in</span><span class="detail-value">${fmtDate(checkin)}</span></div>
-        <div class="detail-row"><span class="detail-label">Check-out</span><span class="detail-value">${fmtDate(checkout)}</span></div>
-        <div class="detail-row"><span class="detail-label">Duration</span><span class="detail-value">${nights} night${nights > 1 ? 's' : ''}</span></div>
-      `;
-
-      // Real-time Inventory update on booking
-      if (roomType.includes('Heritage Deluxe')) {
-        if (roomInventory.room1 > 0) roomInventory.room1--;
-      } else if (roomType.includes('Premium Garden')) {
-        if (roomInventory.room2 > 0) roomInventory.room2--;
-      } else if (roomType.includes('Grand Suite')) {
-        if (roomInventory.room3 > 0) roomInventory.room3--;
-      } else if (roomType.includes('Executive')) {
-        if (roomInventory.room4 > 0) roomInventory.room4--;
-      }
-      updateRoomInventoryUI();
-
-      // Transition
-      bookingForm.style.display = 'none';
-      bookingConfirmation.classList.add('active');
-      bookingConfirmation.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    });
-
-    function resetBooking() {
-      bookingForm.reset();
-      clearErrors();
-      // Reset dates
-      checkinInput.value = todayStr;
-      checkoutInput.value = tomorrowStr;
-      checkoutInput.min = tomorrowStr;
-
-      bookingConfirmation.classList.remove('active');
-      bookingForm.style.display = '';
-    }
-
-    // ===== LIGHTBOX =====
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-
-    function openLightbox(el) {
-      const img = el.querySelector('img');
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLightbox();
-    });
-
-    // Prevent lightbox image click from closing
-    lightboxImg.addEventListener('click', (e) => e.stopPropagation());
-
-    // ===== CONTACT FORM (decorative) =====
-    function handleContactSubmit(e) {
-      e.preventDefault();
-      const btn = document.getElementById('contactSubmitBtn');
-      btn.textContent = 'Message Sent ✓';
-      btn.style.background = 'linear-gradient(135deg, var(--green-mid), var(--green-dark))';
-      btn.style.color = 'var(--white)';
-      btn.disabled = true;
-      setTimeout(() => {
-        btn.textContent = 'Send Message';
-        btn.style.background = '';
-        btn.style.color = '';
-        btn.disabled = false;
-        document.getElementById('contactForm').reset();
-      }, 3000);
-    }
-
-    // ===== SMOOTH SCROLL OFFSET FOR FIXED HEADER =====
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          const offset = 70;
-          const position = target.getBoundingClientRect().top + window.pageYOffset - offset;
-          window.scrollTo({ top: position, behavior: 'smooth' });
-        }
-      });
-    });
-
-    // ===== LIVE ROOM INVENTORY & TABLE OCCUPANCY STATE =====
-    const TOTAL_ROOMS = 24;
-    const roomInventory = {
-      room1: 3, // Heritage Deluxe
-      room2: 2, // Premium Garden View
-      room3: 1, // Grand Suite
-      room4: 1  // Executive Room
-    };
-
-    function updateRoomInventoryUI() {
-      const avail = roomInventory.room1 + roomInventory.room2 + roomInventory.room3 + roomInventory.room4;
-      const occupied = TOTAL_ROOMS - avail;
-      const occPct = Math.round((occupied / TOTAL_ROOMS) * 100);
-
-      // Hero ticker
-      const heroRoom = document.getElementById('heroRoomStat');
-      if (heroRoom) heroRoom.textContent = `${avail} Rooms Available`;
-
-      // Summary bar in #rooms
-      const availEl = document.getElementById('availCount');
-      const occEl = document.getElementById('occCount');
-      if (availEl) availEl.textContent = avail;
-      if (occEl) occEl.textContent = `${occupied} Occupied (${occPct}%)`;
-
-      // Room 1 badge
-      const s1 = document.getElementById('stockRoom1');
-      if (s1) {
-        s1.className = 'room-stock-tag ' + (roomInventory.room1 <= 1 ? 'critical' : roomInventory.room1 <= 2 ? 'low' : 'avail');
-        s1.innerHTML = (roomInventory.room1 <= 1 ? '🔴 ' : roomInventory.room1 <= 2 ? '🟡 ' : '🟢 ') +
-          `<span id="stockCount1">${roomInventory.room1}</span> ` +
-          (roomInventory.room1 === 0 ? 'Sold Out Today' : roomInventory.room1 === 1 ? 'Only 1 Left' : 'Available');
-      }
-
-      // Room 2 badge
-      const s2 = document.getElementById('stockRoom2');
-      if (s2) {
-        s2.className = 'room-stock-tag ' + (roomInventory.room2 <= 1 ? 'critical' : roomInventory.room2 <= 2 ? 'low' : 'avail');
-        s2.innerHTML = (roomInventory.room2 <= 1 ? '🔴 ' : roomInventory.room2 <= 2 ? '🟡 ' : '🟢 ') +
-          `<span id="stockCount2">${roomInventory.room2}</span> ` +
-          (roomInventory.room2 === 0 ? 'Sold Out' : roomInventory.room2 === 1 ? 'Only 1 Left' : 'Left Today');
-      }
-
-      // Room 3 badge
-      const s3 = document.getElementById('stockRoom3');
-      if (s3) {
-        s3.className = 'room-stock-tag ' + (roomInventory.room3 <= 1 ? 'critical' : 'avail');
-        s3.innerHTML = (roomInventory.room3 <= 1 ? '🔴 ' : '🟢 ') +
-          `<span id="stockCount3">${roomInventory.room3}</span> ` +
-          (roomInventory.room3 === 0 ? 'Sold Out' : 'Left (High Demand)');
-      }
-
-      // Room 4 badge
-      const s4 = document.getElementById('stockRoom4');
-      if (s4) {
-        s4.className = 'room-stock-tag ' + (roomInventory.room4 <= 1 ? 'critical' : roomInventory.room4 <= 2 ? 'low' : 'avail');
-        s4.innerHTML = (roomInventory.room4 <= 1 ? '🔴 ' : roomInventory.room4 <= 2 ? '🟡 ' : '🟢 ') +
-          `<span id="stockCount4">${roomInventory.room4}</span> ` +
-          (roomInventory.room4 === 0 ? 'Sold Out' : roomInventory.room4 === 1 ? 'Only 1 Left' : 'Available');
-      }
-    }
-
-    // Sync live availability from TapStay backend
-    fetch('/api/rooms/summary')
-      .then(r => r.json())
-      .then(data => {
-        if (data.success && data.categories) {
-          data.categories.forEach(cat => {
-            if (cat.room_type_id === 'deluxe') roomInventory.room1 = cat.available_count;
-            if (cat.room_type_id === 'garden') roomInventory.room2 = cat.available_count;
-            if (cat.room_type_id === 'suite') roomInventory.room3 = cat.available_count;
-            if (cat.room_type_id === 'executive') roomInventory.room4 = cat.available_count;
-          });
-          updateRoomInventoryUI();
-        }
-      })
-      .catch(() => {});
-
-    // 14 Dining Tables data
-    const tablesData = [
-      { id: 1, name: "Table 1", cap: "2-Seater (Window)", occ: true },
-      { id: 2, name: "Table 2", cap: "4-Seater (Hall)", occ: false },
-      { id: 3, name: "Table 3", cap: "4-Seater (Hall)", occ: true },
-      { id: 4, name: "Table 4", cap: "6-Seater (Booth)", occ: false },
-      { id: 5, name: "Table 5", cap: "2-Seater (Garden)", occ: true },
-      { id: 6, name: "Table 6", cap: "4-Seater (Garden)", occ: true },
-      { id: 7, name: "Table 7", cap: "4-Seater (Courtyard)", occ: true, qr: true },
-      { id: 8, name: "Table 8", cap: "2-Seater (Courtyard)", occ: true },
-      { id: 9, name: "Table 9", cap: "8-Seater (Family)", occ: false },
-      { id: 10, name: "Table 10", cap: "4-Seater (Hall)", occ: true },
-      { id: 11, name: "Table 11", cap: "4-Seater (Garden)", occ: true },
-      { id: 12, name: "Table 12", cap: "2-Seater (Window)", occ: false },
-      { id: 13, name: "Table 13", cap: "6-Seater (Booth)", occ: true },
-      { id: 14, name: "Table 14", cap: "4-Seater (Terrace)", occ: false }
-    ];
-
-    function renderTables() {
-      const grid = document.getElementById('floorGrid');
-      if (!grid) return;
-      grid.innerHTML = '';
-
-      let occCount = 0;
-
-      tablesData.forEach(t => {
-        if (t.occ) occCount++;
-        const card = document.createElement('div');
-        card.className = `table-card ${t.occ ? 'occupied' : 'available'} ${t.qr ? 'active-qr' : ''}`;
-        card.onclick = () => toggleTable(t.id);
-        card.title = 'Click to toggle status (Occupied / Available)';
-
-        card.innerHTML = `
-          ${t.qr ? '<span class="table-qr-badge">QR DEMO</span>' : ''}
-          <div class="table-number">${t.name}</div>
-          <div class="table-capacity">${t.cap}</div>
-          <span class="table-status-pill ${t.occ ? 'occ' : 'free'}">${t.occ ? 'Occupied' : 'Available'}</span>
-        `;
-        grid.appendChild(card);
-      });
-
-      const freeCount = tablesData.length - occCount;
-      const occEl = document.getElementById('tablesOccCount');
-      const freeEl = document.getElementById('tablesAvailCount');
-      const waitEl = document.getElementById('tablesWaitTime');
-      const heroTable = document.getElementById('heroTableStat');
-
-      if (occEl) occEl.textContent = occCount;
-      if (freeEl) freeEl.textContent = freeCount;
-      if (waitEl) waitEl.textContent = freeCount > 2 ? '< 5 mins' : freeCount > 0 ? '10-15 mins' : '25-30 mins';
-      if (heroTable) heroTable.textContent = `${occCount} / ${tablesData.length} Tables Occupied (${freeCount} Free)`;
-    }
-
-    function toggleTable(id) {
-      const table = tablesData.find(t => t.id === id);
-      if (table) {
-        table.occ = !table.occ;
-        renderTables();
-      }
-    }
-
-    function toggleRandomTable() {
-      // Find a random table to toggle for pitch demonstration
-      const randomIndex = Math.floor(Math.random() * tablesData.length);
-      tablesData[randomIndex].occ = !tablesData[randomIndex].occ;
-      renderTables();
-    }
-
-    // ===== SMART QR CODE GENERATION =====
-    const TUNNEL_URL = 'https://a4ee0537aeb823.lhr.life/';
-    let currentQrMode = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? 'tunnel' : 'current';
-    const LAN_IP = '172.16.71.216';
-    const PORT = window.location.port || '8080';
-
-    function getBaseUrl() {
-      if (currentQrMode === 'tunnel') {
-        return TUNNEL_URL;
-      } else if (currentQrMode === 'lan') {
-        return 'http://' + LAN_IP + (PORT ? ':' + PORT : '') + '/';
-      } else if (currentQrMode === 'local') {
-        return 'http://localhost' + (PORT ? ':' + PORT : '') + '/';
+      const header = document.getElementById('siteHeader');
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
       } else {
-        const path = window.location.pathname;
-        const dir = path.substring(0, path.lastIndexOf('/') + 1);
-        return window.location.origin + (dir || '/');
+        header.classList.remove('scrolled');
       }
-    }
+    });
 
-    function renderQRCodes() {
-      if (typeof QRCode === 'undefined') {
-        console.warn('QRCode library not loaded yet');
-        return;
-      }
-      const base = getBaseUrl();
-      const conciergeUrl = base + 'concierge.html?room=204&type=Heritage+Deluxe+Room';
-      const diningUrl = base + 'order.html?table=7';
-      const whatsappUrl = 'https://wa.me/919876543210?text=Hello%20HOTEL%20Dehradun%2C%20I%20would%20like%20to%20enquire%20about%20room%20availability%20and%20amenities.';
-      const reviewUrl = base + 'review.html?stay=recent';
+    // Mobile Hamburger Toggle
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navMenu = document.getElementById('navMenu');
 
-      // Update link hrefs
-      const btnC = document.getElementById('btnConciergeLink');
-      const btnD = document.getElementById('btnDiningLink');
-      const btnR = document.getElementById('btnReviewLink');
-      if (btnC) btnC.href = conciergeUrl;
-      if (btnD) btnD.href = diningUrl;
-      if (btnR) btnR.href = reviewUrl;
+    hamburgerBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
 
-      // Clear containers
-      ['qrConcierge', 'qrDining', 'qrWhatsapp', 'qrReview'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.innerHTML = '';
+    // Close menu on link click
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
       });
+    });
 
-      const qrConfig = {
-        width: 150,
-        height: 150,
-        colorDark: '#1B4332',
-        colorLight: '#ffffff',
-        correctLevel: QRCode.CorrectLevel.M
-      };
+    // Demo Form Submission Simulation
+    function handleInquirySubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('inqName').value.trim();
+      const hotel = document.getElementById('inqHotel').value.trim();
+      const phone = document.getElementById('inqPhone').value.trim();
 
-      try {
-        new QRCode(document.getElementById('qrConcierge'), { ...qrConfig, text: conciergeUrl });
-        new QRCode(document.getElementById('qrDining'), { ...qrConfig, text: diningUrl });
-        new QRCode(document.getElementById('qrWhatsapp'), { ...qrConfig, text: whatsappUrl });
-        new QRCode(document.getElementById('qrReview'), { ...qrConfig, text: reviewUrl });
-      } catch (err) {
-        console.error('Error generating QR codes:', err);
-      }
+      const btn = document.getElementById('inquirySubmitBtn');
+      btn.innerHTML = '<span>Sending Request...</span>';
+      btn.disabled = true;
 
-      // Update target hint
-      const hint = document.getElementById('qrTargetHint');
-      if (hint) {
-        if (currentQrMode === 'tunnel') {
-          hint.innerHTML = 'Encoding live secure URL: <strong style="color:var(--green-dark);">' + base + '</strong> (Scannable from ANY smartphone & mobile network)';
-        } else if (currentQrMode === 'lan') {
-          hint.innerHTML = 'Encoding local Wi-Fi URL: <strong style="color:var(--green-dark);">' + base + '</strong> (Phones on same Wi-Fi)';
-        } else {
-          hint.innerHTML = 'Encoding local URL: <strong style="color:var(--green-dark);">' + base + '</strong> (For browser testing on this laptop)';
-        }
-      }
+      setTimeout(() => {
+        btn.innerHTML = '<span>Request Received! ✓</span>';
+        showToast(`Thank you ${name}! Our founding team will contact you at ${phone} shortly.`);
+        document.getElementById('inquiryForm').reset();
+
+        setTimeout(() => {
+          btn.innerHTML = '<span>Submit Demo Request ✨</span>';
+          btn.disabled = false;
+        }, 3500);
+      }, 700);
     }
 
-    function switchQrHost(mode) {
-      currentQrMode = mode;
-      const btnTunnel = document.getElementById('btnTunnel');
-      const btnLan = document.getElementById('btnLanIp');
-      const btnLocal = document.getElementById('btnLocalhost');
-      if (btnTunnel) btnTunnel.classList.toggle('active', mode === 'tunnel');
-      if (btnLan) btnLan.classList.toggle('active', mode === 'lan');
-      if (btnLocal) btnLocal.classList.toggle('active', mode === 'local');
-      renderQRCodes();
-    }
-
-    function initOccupancy() {
-      updateRoomInventoryUI();
-      renderTables();
-      renderQRCodes();
-    }
-
-    // Initialize when DOM and scripts ready
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initOccupancy);
-    } else {
-      setTimeout(initOccupancy, 50);
+    function showToast(msg) {
+      const toast = document.getElementById('toastMsg');
+      toast.textContent = msg;
+      toast.style.display = 'block';
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 5000);
     }
   </script>
-  <script src="qrcode.min.js" onload="renderQRCodes()"></script>
 </body>
 </html>
