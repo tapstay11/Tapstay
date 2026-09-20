@@ -528,8 +528,10 @@
       <!-- Centered Demo Request Form Card -->
       <div class="inquiry-form-card"
         style="max-width: 640px; margin: 0 auto; box-shadow: var(--card-shadow), var(--glow-shadow);">
-        <h3 class="inquiry-title" style="text-align: center; margin-bottom: 8px;">Schedule Your Live Demo</h3>
-        <p class="inquiry-subtitle" style="text-align: center; margin-bottom: 28px;">Pick a date & time. Our founding team will send your demo link and walkthrough.</p>
+        <div id="inqFormHeader">
+          <h3 class="inquiry-title" style="text-align: center; margin-bottom: 8px;">Schedule Your Live Demo</h3>
+          <p class="inquiry-subtitle" style="text-align: center; margin-bottom: 28px;">Pick a date & time. Our founding team will send your demo link and walkthrough.</p>
+        </div>
 
         <form id="inquiryForm" onsubmit="handleInquirySubmit(event)">
           <div class="form-row">
@@ -585,8 +587,49 @@
           <button type="submit" class="btn-submit-inquiry" id="inquirySubmitBtn" style="margin-top: 8px;">
             <span>Confirm & Schedule Live Demo ✨</span>
           </button>
-          <div id="inquiryStatusNote" style="display:none; margin-top: 14px; font-size: 0.88rem; text-align: center; line-height: 1.5;"></div>
         </form>
+
+        <!-- Inline Success Confirmation (No page redirection) -->
+        <div id="inquirySuccessCard" style="display: none; text-align: center; padding: 20px 10px; animation: fadeIn 0.4s ease-out;">
+          <div style="width: 72px; height: 72px; margin: 0 auto 20px; border-radius: 50%; background: rgba(52, 211, 153, 0.12); border: 2px solid #34D399; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px rgba(52, 211, 153, 0.35);">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <span class="section-tag" style="background: rgba(52, 211, 153, 0.15); border-color: rgba(52, 211, 153, 0.4); color: #34D399; margin-bottom: 12px; display: inline-block;">Demo Confirmed</span>
+          <h3 style="font-size: 1.75rem; font-weight: 700; color: #FFFFFF; margin-bottom: 10px;">Live Demo Scheduled! ✨</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 480px; margin: 0 auto 24px; line-height: 1.6;">
+            Thank you, <strong id="successName" style="color: #FFFFFF;"></strong>! Your live walkthrough of the Tapstay hospitality suite has been scheduled. Our founding team will connect with you via Google Meet.
+          </p>
+
+          <!-- Booking Summary Box -->
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(168, 85, 247, 0.28); border-radius: 14px; padding: 20px 24px; max-width: 480px; margin: 0 auto 26px; text-align: left; font-size: 0.92rem; line-height: 1.8;">
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.07); padding-bottom: 8px; margin-bottom: 8px;">
+              <span style="color: var(--text-muted);">📅 Scheduled Date:</span>
+              <strong id="successDate" style="color: #FFFFFF;"></strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.07); padding-bottom: 8px; margin-bottom: 8px;">
+              <span style="color: var(--text-muted);">⏰ Preferred Slot:</span>
+              <strong id="successTime" style="color: #A855F7;"></strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.07); padding-bottom: 8px; margin-bottom: 8px;">
+              <span style="color: var(--text-muted);">🏨 Property:</span>
+              <strong id="successProperty" style="color: #FFFFFF;"></strong>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span style="color: var(--text-muted);">📧 Meet Link Sent To:</span>
+              <strong id="successEmail" style="color: #34D399;"></strong>
+            </div>
+          </div>
+
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 22px;">
+            Need to reschedule? Reply directly to our invite or email us at <a href="mailto:tapstay11@gmail.com" style="color: var(--accent-purple); text-decoration: underline;">tapstay11@gmail.com</a>.
+          </p>
+
+          <button type="button" class="btn-outline-glow" onclick="resetInquiryForm()" style="padding: 10px 24px; font-size: 0.88rem; cursor: pointer; border-radius: 50px; background: transparent; color: #FFFFFF; border: 1px solid rgba(168, 85, 247, 0.4);">
+            ← Schedule Another Session
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -706,9 +749,15 @@
       const scaleText = scaleSelect.options[scaleSelect.selectedIndex].text;
 
       const btn = document.getElementById('inquirySubmitBtn');
-      const statusNote = document.getElementById('inquiryStatusNote');
-      btn.innerHTML = '<span>Sending to tapstay11@gmail.com...</span>';
+      btn.innerHTML = '<span>Scheduling your live demo...</span>';
       btn.disabled = true;
+
+      // Format date for display (e.g., Sat, 21 Sep 2026)
+      let formattedDate = date;
+      try {
+        const dObj = new Date(date + 'T00:00:00');
+        formattedDate = dObj.toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
+      } catch (err) {}
 
       const payload = {
         _subject: `New Demo Booking: ${hotel} (${date} @ ${timeSlot})`,
@@ -724,43 +773,51 @@
         Property_Scale: scaleText
       };
 
-      try {
-        const res = await fetch('https://formsubmit.co/ajax/tapstay11@gmail.com', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify(payload)
-        });
+      // Asynchronously send to Gmail via FormSubmit
+      fetch('https://formsubmit.co/ajax/tapstay11@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      }).catch(err => {
+        console.warn('Form submission notice:', err);
+      });
 
-        if (res.ok) {
-          btn.innerHTML = '<span>Demo Scheduled! ✓</span>';
-          if (statusNote) {
-            statusNote.style.display = 'block';
-            statusNote.style.color = '#34D399';
-            statusNote.innerHTML = `✓ Request sent to <b>tapstay11@gmail.com</b>! Redirecting to confirmation...`;
-          }
-          showToast(`Demo booked for ${date} (${timeSlot})! Redirecting...`);
-          setTimeout(() => {
-            window.location.href = `thank-you.html?plan=${encodeURIComponent('Live Demo (' + date + ')')}&order=${Math.floor(100000 + Math.random() * 900000)}`;
-          }, 1400);
-        } else {
-          throw new Error('Non-200 response');
-        }
-      } catch (err) {
-        console.warn('Submission notice:', err);
-        btn.innerHTML = '<span>Demo Scheduled! ✓</span>';
-        if (statusNote) {
-          statusNote.style.display = 'block';
-          statusNote.style.color = '#34D399';
-          statusNote.innerHTML = `✓ Demo requested for <b>${date} (${timeSlot})</b>! Redirecting to confirmation...`;
-        }
-        showToast(`Thank you ${name}! Demo requested for ${date}.`);
-        setTimeout(() => {
-          window.location.href = `thank-you.html?plan=${encodeURIComponent('Live Demo (' + date + ')')}&order=${Math.floor(100000 + Math.random() * 900000)}`;
-        }, 1400);
+      // Show inline confirmation on the page without redirecting
+      document.getElementById('inquiryForm').style.display = 'none';
+      const header = document.getElementById('inqFormHeader');
+      if (header) header.style.display = 'none';
+
+      document.getElementById('successName').textContent = name;
+      document.getElementById('successDate').textContent = formattedDate;
+      document.getElementById('successTime').textContent = timeSlot;
+      document.getElementById('successProperty').textContent = hotel;
+      document.getElementById('successEmail').textContent = email;
+
+      const successCard = document.getElementById('inquirySuccessCard');
+      if (successCard) successCard.style.display = 'block';
+
+      showToast(`✓ Demo Scheduled for ${formattedDate} (${timeSlot})!`);
+    }
+
+    function resetInquiryForm() {
+      const form = document.getElementById('inquiryForm');
+      if (form) {
+        form.reset();
+        form.style.display = 'block';
       }
+      setupDateInput();
+      const btn = document.getElementById('inquirySubmitBtn');
+      if (btn) {
+        btn.innerHTML = '<span>Confirm & Schedule Live Demo ✨</span>';
+        btn.disabled = false;
+      }
+      const header = document.getElementById('inqFormHeader');
+      if (header) header.style.display = 'block';
+      const successCard = document.getElementById('inquirySuccessCard');
+      if (successCard) successCard.style.display = 'none';
     }
 
     function showToast(msg) {
