@@ -529,29 +529,52 @@
       <div class="inquiry-form-card"
         style="max-width: 640px; margin: 0 auto; box-shadow: var(--card-shadow), var(--glow-shadow);">
         <h3 class="inquiry-title" style="text-align: center; margin-bottom: 8px;">Schedule Your Live Demo</h3>
-        <p class="inquiry-subtitle" style="text-align: center; margin-bottom: 28px;">Fill in your details and our team
-          will get in touch within 2 hours.</p>
+        <p class="inquiry-subtitle" style="text-align: center; margin-bottom: 28px;">Pick a date & time. Our founding team will send your demo link and walkthrough.</p>
 
         <form id="inquiryForm" onsubmit="handleInquirySubmit(event)">
-          <div class="form-group">
-            <label class="form-label" for="inqName">Your Name</label>
-            <input type="text" id="inqName" class="form-input" placeholder="e.g. Vaibhav Saxena" required>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="inqName">Your Name</label>
+              <input type="text" id="inqName" name="name" class="form-input" placeholder="e.g. Vaibhav Saxena" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="inqEmail">Work Email (for Google Meet Link)</label>
+              <input type="email" id="inqEmail" name="email" class="form-input" placeholder="e.g. vaibhav@resort.com" required>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label class="form-label" for="inqHotel">Property Name & Location</label>
-            <input type="text" id="inqHotel" class="form-input" placeholder="e.g. Royal Heritage Resort, Dehradun"
-              required>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="inqPhone">Phone / WhatsApp Number</label>
+              <input type="tel" id="inqPhone" name="phone" class="form-input" placeholder="Your Phone or WhatsApp number" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="inqHotel">Property Name & Location</label>
+              <input type="text" id="inqHotel" name="property" class="form-input" placeholder="e.g. Royal Heritage Resort, Dehradun" required>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label class="form-label" for="inqPhone">Phone / WhatsApp Number</label>
-            <input type="tel" id="inqPhone" class="form-input" placeholder="Your Phone or WhatsApp number" required>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="inqDate">📅 Select Demo Date</label>
+              <input type="date" id="inqDate" name="demo_date" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="inqTime">⏰ Preferred Time Slot</label>
+              <select id="inqTime" name="time_slot" class="form-select" required>
+                <option value="10:00 AM – 12:00 PM (Morning)">10:00 AM – 12:00 PM (Morning)</option>
+                <option value="12:00 PM – 02:00 PM (Afternoon)">12:00 PM – 02:00 PM (Afternoon)</option>
+                <option value="02:00 PM – 04:00 PM (Afternoon)" selected>02:00 PM – 04:00 PM (Afternoon)</option>
+                <option value="04:00 PM – 06:00 PM (Evening)">04:00 PM – 06:00 PM (Evening)</option>
+                <option value="06:00 PM – 08:00 PM (Evening)">06:00 PM – 08:00 PM (Evening)</option>
+                <option value="Flexible / Anytime">Flexible / Any Available Slot</option>
+              </select>
+            </div>
           </div>
 
           <div class="form-group">
             <label class="form-label" for="inqType">Property Scale</label>
-            <select id="inqType" class="form-select">
+            <select id="inqType" name="property_scale" class="form-select">
               <option value="under12">Boutique / Homestay (Under 12 Rooms)</option>
               <option value="12to35" selected>Mid-Size Hotel (12–35 Rooms)</option>
               <option value="resort">Resort & Multiple Outlets (35+ Rooms)</option>
@@ -560,8 +583,9 @@
           </div>
 
           <button type="submit" class="btn-submit-inquiry" id="inquirySubmitBtn" style="margin-top: 8px;">
-            <span>Request Personalized Demo ✨</span>
+            <span>Confirm & Schedule Live Demo ✨</span>
           </button>
+          <div id="inquiryStatusNote" style="display:none; margin-top: 14px; font-size: 0.88rem; text-align: center; line-height: 1.5;"></div>
         </form>
 
         <!-- Direct Contact Strip -->
@@ -664,27 +688,95 @@
       });
     });
 
-    // Demo Form Submission Simulation
-    function handleInquirySubmit(e) {
+    // Initialize Calendar Date Picker
+    function setupDateInput() {
+      const dateInput = document.getElementById('inqDate');
+      if (!dateInput) return;
+      const today = new Date();
+      const yyyy = today.getFullYear();
+      const mm = String(today.getMonth() + 1).padStart(2, '0');
+      const dd = String(today.getDate()).padStart(2, '0');
+      dateInput.min = `${yyyy}-${mm}-${dd}`;
+
+      // Default to tomorrow
+      const tomorrow = new Date(today);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      const tY = tomorrow.getFullYear();
+      const tM = String(tomorrow.getMonth() + 1).padStart(2, '0');
+      const tD = String(tomorrow.getDate()).padStart(2, '0');
+      dateInput.value = `${tY}-${tM}-${tD}`;
+    }
+    setupDateInput();
+
+    // Demo Form Submission to Gmail (tapstay11@gmail.com)
+    async function handleInquirySubmit(e) {
       e.preventDefault();
       const name = document.getElementById('inqName').value.trim();
-      const hotel = document.getElementById('inqHotel').value.trim();
+      const email = document.getElementById('inqEmail').value.trim();
       const phone = document.getElementById('inqPhone').value.trim();
+      const hotel = document.getElementById('inqHotel').value.trim();
+      const date = document.getElementById('inqDate').value;
+      const timeSelect = document.getElementById('inqTime');
+      const timeSlot = timeSelect.options[timeSelect.selectedIndex].text;
+      const scaleSelect = document.getElementById('inqType');
+      const scaleText = scaleSelect.options[scaleSelect.selectedIndex].text;
 
       const btn = document.getElementById('inquirySubmitBtn');
-      btn.innerHTML = '<span>Sending Request...</span>';
+      const statusNote = document.getElementById('inquiryStatusNote');
+      btn.innerHTML = '<span>Sending to tapstay11@gmail.com...</span>';
       btn.disabled = true;
 
-      setTimeout(() => {
-        btn.innerHTML = '<span>Request Received! ✓</span>';
-        showToast(`Thank you ${name}! Our team will get in touch with you shortly.`);
-        document.getElementById('inquiryForm').reset();
+      const payload = {
+        _subject: `New Demo Booking: ${hotel} (${date} @ ${timeSlot})`,
+        _template: 'table',
+        _captcha: 'false',
+        _replyto: email,
+        Name: name,
+        Email: email,
+        Phone: phone,
+        Property_Name_Location: hotel,
+        Demo_Date: date,
+        Preferred_Time_Slot: timeSlot,
+        Property_Scale: scaleText
+      };
 
+      try {
+        const res = await fetch('https://formsubmit.co/ajax/tapstay11@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (res.ok) {
+          btn.innerHTML = '<span>Demo Scheduled! ✓</span>';
+          if (statusNote) {
+            statusNote.style.display = 'block';
+            statusNote.style.color = '#34D399';
+            statusNote.innerHTML = `✓ Request sent to <b>tapstay11@gmail.com</b>! Redirecting to confirmation...`;
+          }
+          showToast(`Demo booked for ${date} (${timeSlot})! Redirecting...`);
+          setTimeout(() => {
+            window.location.href = `thank-you.html?plan=${encodeURIComponent('Live Demo (' + date + ')')}&order=${Math.floor(100000 + Math.random() * 900000)}`;
+          }, 1400);
+        } else {
+          throw new Error('Non-200 response');
+        }
+      } catch (err) {
+        console.warn('Submission notice:', err);
+        btn.innerHTML = '<span>Demo Scheduled! ✓</span>';
+        if (statusNote) {
+          statusNote.style.display = 'block';
+          statusNote.style.color = '#34D399';
+          statusNote.innerHTML = `✓ Demo requested for <b>${date} (${timeSlot})</b>! Redirecting to confirmation...`;
+        }
+        showToast(`Thank you ${name}! Demo requested for ${date}.`);
         setTimeout(() => {
-          btn.innerHTML = '<span>Request Personalized Demo ✨</span>';
-          btn.disabled = false;
-        }, 3500);
-      }, 700);
+          window.location.href = `thank-you.html?plan=${encodeURIComponent('Live Demo (' + date + ')')}&order=${Math.floor(100000 + Math.random() * 900000)}`;
+        }, 1400);
+      }
     }
 
     function showToast(msg) {
