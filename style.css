@@ -186,7 +186,7 @@ input:focus, select:focus, textarea:focus {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('images/hero.jpg') center center / cover no-repeat;
+  background: url('images/hero.webp') center center / cover no-repeat, url('images/hero.jpg') center center / cover no-repeat;
   filter: brightness(0.45);
   transform: scale(1.05);
   animation: heroZoom 20s ease-in-out infinite alternate;
